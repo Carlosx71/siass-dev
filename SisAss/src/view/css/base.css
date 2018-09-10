@@ -1,0 +1,128 @@
+/*Customização do navbar
+--------------------------------------------------------------------*/
+
+.imgNav img {
+    max-width: 60px;
+    max-height: 60px;
+    width: auto;
+    height: auto;
+}
+
+.sair {
+    margin-left: 8px;
+    color: white;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+/*Customização em smartphone
+--------------------------------------------------------------------*/
+
+/*Customização do navbar em smartphone
+--------------------------------------------------------------------*/
+
+@media only screen and (max-width: 400px) {
+    .alinLogo {
+        text-align: center;
+    }
+    /*Customização do body
+--------------------------------------------------------------------*/
+    body {
+        background-color: white !important;
+    }
+}
+
+/*Customização do botão
+--------------------------------------------------------------------*/
+
+.btn {
+    background-color: rgb(40, 143, 68);
+    color: white;
+    border-color: #28a745;
+}
+.list-group-item {
+    padding: 20px;
+    
+}
+li .btn-danger{
+    padding: 5px;
+    padding-right: 12px;
+    padding-left: 12px;
+    float: right;
+    margin-left: 5px;
+    background-color: red;
+}
+
+.btn-primary {
+    background-color: rgb(40, 143, 68) !important;
+    border-color: #28a745 !important;
+}
+
+/*Customizacao da tela de Login em Desktop
+--------------------------------------------------------------------*/
+
+@media only screen and (min-width: 1200px) {
+    .containerLogin {
+        padding-left: 300px;
+        padding-right: 300px;
+    }
+    /*Custmozacao da nav bar (Desktop)*/
+    .navbar {
+        height: 80px;
+    }
+}
+
+/*Customizacao dos ícones
+--------------------------------------------------------------------*/
+
+.fas {
+    color: rgb(40, 143, 68);
+    margin: 3px;
+}
+
+.far {
+    color: rgb(40, 143, 68);
+    margin: 3px;
+}
+
+.colorbtn {
+    color: white;
+}
+
+/*Customização do body
+--------------------------------------------------------------------*/
+
+body {
+    background-color: rgb(240, 240, 240);
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.container .containerBody {
+    background-color: white;
+    padding: 40px;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+/*Customização do toggle
+--------------------------------------------------------------------*/
+
+.navbar-toggler {
+    background-color: rgb(40, 143, 68);
+    color: white;
+}
+
+/*Customização da tela de Login
+--------------------------------------------------------------------*/
+
+.logoLogin {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 230px;
+}
