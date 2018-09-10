@@ -20,6 +20,58 @@
 	<link rel="shortcut icon" type="image/x-icon" href="img/siassVerde.png" />
 	<link rel="stylesheet" href="css/base.css">
 	<title>SiAss</title>
+	<script>
+		//Traz o id
+		let queryString = window.location.search;
+		let id = queryString.split('=')[1];
+		console.log(id + ' tô na pagina do artesão hahahahah');
+
+
+		let x = JSON.parse(server());
+		console.log(x);
+		escrever(x);
+		function escrever(conteudo) {
+			console.log(conteudo);
+			if (!("erro" in conteudo)) {
+				// Atualiza os campos com os valores.
+				 document.getElementById('nomeID').value = (conteudo.nome);
+				//console.log(teste);
+				//document.getElementById('bairro').value = (conteudo.bairro);
+				//document.getElementById('cidade').value = (conteudo.localidade);
+				//document.getElementById('uf').value = (conteudo.uf);
+			}
+			else {
+				alert("não encontrado.");
+			}
+		}
+		function limparForm() {
+			document.getElementById('nomeID').value = ("");
+			escrever(x);
+		}
+
+		function server() {
+			var http;
+			var return__;
+			try {
+				http = new XMLHttpRequest();
+				http.open("GET", "http://localhost:3000/artesao/" + id, false);
+				http.onreadystatechange = function (e) {
+					if (http.readyState === 4) {
+						if (http.status === 200) {
+							return__ = http.responseText;
+						} else {
+							console.log('error: ' + http.statusText);
+						}
+					}
+				};
+				http.send(null);
+				return return__;
+			}
+			catch (e) {
+				console.log(e);
+			}
+		}
+	</script>
 </head>
 
 <body>
@@ -93,6 +145,11 @@
 
 	<div class="container">
 		<div class="containerBody">
+			<script type="text/javascript">
+				window.onload = function () {
+					limparForm();
+				}
+			</script>
 			<h2>Editar Artesão</h2>
 			<hr>
 			<h4>Dados Pessoas</h4>
@@ -100,7 +157,7 @@
 			<form class="needs-validation" action="/artesao" method="POST">
 				<div class="form-row">
 					<div class="col-md-4 mb-3">
-						<label for="nome">Nome do Artesão</label> <input type="text" class="form-control" id="nome" name="nome"
+						<label for="nome">Nome do Artesão</label> <input type="text" class="form-control" id="nomeID" name="nome"
 						 placeholder="Nome do Artesao" required>
 						<div class="valid-tooltip">Campo Obrigatório</div>
 					</div>
@@ -154,12 +211,13 @@
 				<br>
 				<div class="form-row">
 					<div class="col-md-3 mb-3">
-						<label for="cepArtesao">CEP</label> <input type="text " class="form-control" id="cepArtesao" name="cepArtesao" placeholder="00000-000"
-						 onblur="pesquisacep(this.value);" required>
+						<label for="cepArtesao">CEP</label> <input type="text " class="form-control" id="cepArtesao" name="cepArtesao"
+						 placeholder="00000-000" onblur="pesquisacep(this.value);" required>
 						<div class="invalid-tooltip">Insira CEP válido.</div>
 					</div>
 					<div class="col-md-6 mb-3">
-						<label for="rua">Rua</label> <input type="text" class="form-control" id="rua" name="rua" placeholder="Rua" required>
+						<label for="rua">Rua</label> <input type="text" class="form-control" id="rua" name="rua" placeholder="Rua"
+						 required>
 						<div class="invalid-tooltip">Por favor, insira uma rua</div>
 					</div>
 					<div class="col-md-1 mb-3">
@@ -169,7 +227,7 @@
 					</div>
 					<div class="col-md-2 mb-3">
 						<label for="complemento">Complemento</label> <input type="text" class="form-control " id="complemento" name="complemento"
-						 placeholder="Complemento" required>
+						 placeholder="Complemento">
 						<div class="invalid-tooltip">Por favor, insira um número</div>
 					</div>
 				</div>

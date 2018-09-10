@@ -2002,7 +2002,7 @@ function getArtesao(element){
 		.then((response) => {
 		
 			console.log('entrei no response');
-			popularEdit(id);
+			redirect(id);
 	
 		})
 		.catch((error) => {
@@ -2014,29 +2014,30 @@ function getArtesao(element){
 
 };
 
-function redirect(conteudo){
-	console.log(conteudo + ' to no redirect mano');
+function redirect(id){
+	console.log(id  + ' to no redirect mano');
 
 	//const _id = id;
 	window.location = "../editarArtesao.html?id="+id;
 
-	popularEdit2();
+	//popularEdit2();
 
 };
 
-function popularEdit2(){
+/*function popularEdit2(){
 	document.getElementById('nome').value = (conteudo.nome);
-};
+};*/
 
-function popularEdit(id2){
+/*function popularEdit(id2){
 
 	let id = id2;
-	console.log(id + 'entrei no popularEdit heheheh');
+	console.log(id + ' entrei no popularEdit heheheh');
+	redirect();
 	//document.getElementById('nome').value = 'teste';
-	let script = document.createElement('script');
+	//let script = document.createElement('script');
 
-	script.src = "http://localhost:3000/artesao/?callback=redirect";
+	//script.src = "http://localhost:3000/artesao/?callback=redirect";
 
-	document.body.appendChild(script);
-	console.log('script');
-}
+	//document.body.appendChild(script);
+	//console.log(script);
+}*/
