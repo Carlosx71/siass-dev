@@ -29,12 +29,15 @@
 
 		let x = JSON.parse(server());
 		console.log(x);
-		escrever(x);
+		//escrever(x);
 		function escrever(conteudo) {
 			console.log(conteudo);
 			if (!("erro" in conteudo)) {
 				// Atualiza os campos com os valores.
-				 document.getElementById('nomeID').value = (conteudo.nome);
+				document.getElementById('nome').value = (conteudo.nome);
+				document.getElementById('dataDeNascimento').value = (conteudo.dataDeNascimento);
+				document.getElementById('rua').value = (conteudo.rua);
+
 				//console.log(teste);
 				//document.getElementById('bairro').value = (conteudo.bairro);
 				//document.getElementById('cidade').value = (conteudo.localidade);
@@ -45,7 +48,9 @@
 			}
 		}
 		function limparForm() {
-			document.getElementById('nomeID').value = ("");
+			document.getElementById('nome').value = ("");
+			document.getElementById('dataDeNascimento').value = ("");
+			document.getElementById('rua').value = ("");
 			escrever(x);
 		}
 
@@ -71,6 +76,31 @@
 				console.log(e);
 			}
 		}
+		function edit() {
+
+			var url = "http://localhost:3000/artesao/" + id;
+
+			var data = {};
+			data.nome = req.body.nome;
+			data.dataDeNascimento = req.body.dataDeNascimento;
+			var json = JSON.stringify(data);
+			console.log(json);
+
+			var xhr = new XMLHttpRequest();
+			xhr.open("PUT", url , true);
+			xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+			xhr.onload = function () {
+				var users = JSON.parse(xhr.responseText);
+				if (xhr.readyState == 4 && xhr.status == "200") {
+					console.table(users);
+				} else {
+					console.error(users);
+				}
+			}
+			xhr.send(json);
+
+		}
+
 	</script>
 </head>
 
@@ -154,10 +184,11 @@
 			<hr>
 			<h4>Dados Pessoas</h4>
 			<br>
-			<form class="needs-validation" action="/artesao" method="POST">
+			<!--action="/artesao" method="POST"-->
+			<form class="needs-validation">
 				<div class="form-row">
 					<div class="col-md-4 mb-3">
-						<label for="nome">Nome do Artesão</label> <input type="text" class="form-control" id="nomeID" name="nome"
+						<label for="nome">Nome do Artesão</label> <input type="text" class="form-control" id="nome" name="nome"
 						 placeholder="Nome do Artesao" required>
 						<div class="valid-tooltip">Campo Obrigatório</div>
 					</div>
@@ -267,7 +298,7 @@
 					</div>
 				</div>
 				<hr>
-				<button class="btn btn-primary" type="submit">Salvar</button>
+				<button class="btn btn-primary" type="submit" onclick="edit()">Salvar</button>
 		</div>
 		</form>
 
