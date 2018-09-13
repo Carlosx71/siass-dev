@@ -26,15 +26,15 @@ exports.post = (req, res, next) => {
 };
 
 //movido na aula 12
-exports.put = (req, res, next) => {
+/*exports.put = (req, res, next) => {
     const id = req.params.id;//recupera os parametros que vem pela url
     res.status(200).send({
         id: id,
         item: req.body
     });
-}
+}*/
 
-exports.put = (req, res, next) => {
+exports.post = (req, res, next) => {
     Artesao
         .findByIdAndUpdate(req.params.id, {
             //$set seta o que veio da requisao
