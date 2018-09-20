@@ -20,123 +20,124 @@
 </head>
 
 <body>
-    <header>
-        <!--Inicio do navbar-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    <div class="imgNav alinLogo">
-                        <img src="img/siassVerde.png" class="img-responsive" alt="Logo da Siass">
+        <header>
+                <!--Inicio do navbar-->
+                <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+                    <div class="container">
+                        <a class="navbar-brand" href="index.html">
+                            <div class="imgNav alinLogo">
+                                <img src="img/siassVerde.png" class="img-responsive" alt="Logo da Siass">
+                            </div>
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+        
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="index.html">
+                                        <i class="fas fa-home"></i>Inicio
+                                        <span class="sr-only">(current)</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-user"></i>
+                                        Artesãos
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="artesaosCadastrados.html">
+                                            <i class="fas fa-list-ul"></i>
+                                            Artesãos Cadastrados
+                                        </a>
+                                        <a class="dropdown-item" href="cadastroArtesao.html">
+                                            <i class="fas fa-user-plus"></i>
+                                            Cadastro de Artesãos
+                                        </a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">
+                                            <i class="far fa-chart-bar"></i>
+                                            Relatório de Artesãos</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-boxes"></i>
+                                        Produtos
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="cadastroProduto.html">
+                                            <i class="fas fa-box-open"></i>
+                                            Cadastrar Produto
+                                        </a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">
+                                            <i class="far fa-chart-bar"></i>
+                                            Relatório de Produtos</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        Eventos
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="eventos.html">
+                                            <i class="far fa-calendar-alt"></i>
+                                            Cadastrar novo Evento
+                                        </a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">
+                                            <i class="far fa-chart-bar"></i>
+                                            Relatório de Eventos</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-dollar-sign"></i>
+                                        Movimentações
+        
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="movimentacoes.html">
+                                            <i class="far fa-calendar-alt"></i>
+                                            Entrada e Saída
+                                        </a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">
+                                            <i class="far fa-chart-bar"></i>
+                                            Dashboard</a>
+                                    </div>
+                                </li>
+                            </ul>
+                            <form class="form-inline my-2 my-lg-0">
+                                <input class="form-control mr-sm-2" type="search" placeholder=" Digite aqui para pesquisar..."
+                                    aria-label="Search">
+        
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                                    <i class="fas fa-search colorbtn"></i> Pesquisar</button>
+                                <a href="login.html" class="sair">Sair</a>
+                            </form>
+                        </div>
                     </div>
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                </nav>
+            </header>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="index.html">
-                                <i class="fas fa-home"></i>Início
-                                <span class="sr-only">(current)</span>
-                            </a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
-                                <i class="fas fa-user"></i>
-                                Artesãos
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="artesaosCadastrados.html">
-                                    <i class="fas fa-user-plus"></i>
-                                    Artesãos Cadastrados
-                                </a>
-                                <a class="dropdown-item" href="cadastroArtesao.html">
-                                    <i class="fas fa-user-plus"></i>
-                                    Cadastro de Artesãos
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">
-                                    <i class="far fa-chart-bar"></i>
-                                    Relatorio de Artesaos</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
-                                <i class="fas fa-boxes"></i>
-                                Produtos
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="cadastroProduto.html">
-                                    <i class="fas fa-box-open"></i>
-                                    Cadastrar Produto
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">
-                                    <i class="far fa-chart-bar"></i>
-                                    Relatorio de Produtos</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
-                                <i class="fas fa-calendar-alt"></i>
-                                Eventos
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="eventos.html">
-                                    <i class="far fa-calendar-alt"></i>
-                                    Cadastrar novo Evento
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">
-                                    <i class="far fa-chart-bar"></i>
-                                    Relatorio de Eventos</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
-                                <i class="fas fa-dollar-sign"></i>
-                                Movimentações
-
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="movimentacoes.html">
-                                    <i class="far fa-calendar-alt"></i>
-                                    Entrada e Saída
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">
-                                    <i class="far fa-chart-bar"></i>
-                                    Dashboard</a>
-                            </div>
-                        </li>
-                    </ul>
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder=" Digite aqui para pesquisar..." aria-label="Search">
-
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-                            <i class="fas fa-search colorbtn"></i> Pesquisar</button>
-                        <a href="login.html" class="sair">Sair</a>
-                    </form>
+    <div class="container">
+        <div class="containerSucess">
+            <div class="containerBody">
+                <img src="img/icone_ok1.png" alt="Atualizado com Sucesso" class="imgSucess">
+                <br>
+                <div class="atuaSucess">
+                    <b>Artesão Atualizado com Sucesso</b>
                 </div>
             </div>
-        </nav>
-    </header>
-    <!--Inicio do container-->
-    
-    <div class="container">
-        <div class="containerBody">
-            <h2></h2>            
-            <hr>
-           <img src="img/icone_ok1.png" alt="Atualizado com Sucesso" class="imgSucess">
-           <br>
-           <span class="atuaSucess">Artesão Atualizado com Sucesso</span>
-          
         </div>
     </div>
 

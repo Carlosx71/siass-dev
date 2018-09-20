@@ -30,8 +30,8 @@
                         <img src="img/siassVerde.png" class="img-responsive" alt="Logo da Siass">
                     </div>
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -44,25 +44,29 @@
                             </a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-user"></i>
-                                Artesaos
+                                Artesãos
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="artesaosCadastrados.html">
+                                    <i class="fas fa-list-ul"></i>
+                                    Artesãos Cadastrados
+                                </a>
                                 <a class="dropdown-item" href="cadastroArtesao.html">
                                     <i class="fas fa-user-plus"></i>
-                                    Cadastro de Artesaos
+                                    Cadastro de Artesãos
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">
                                     <i class="far fa-chart-bar"></i>
-                                    Relatorio de Artesaos</a>
+                                    Relatório de Artesãos</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-boxes"></i>
                                 Produtos
                             </a>
@@ -74,12 +78,12 @@
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">
                                     <i class="far fa-chart-bar"></i>
-                                    Relatorio de Produtos</a>
+                                    Relatório de Produtos</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-calendar-alt"></i>
                                 Eventos
                             </a>
@@ -91,7 +95,7 @@
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">
                                     <i class="far fa-chart-bar"></i>
-                                    Relatorio de Eventos</a>
+                                    Relatório de Eventos</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
@@ -99,12 +103,12 @@
                                 aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-dollar-sign"></i>
                                 Movimentações
-      
+
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="movimentacoes.html">
                                     <i class="far fa-calendar-alt"></i>
-                                    Entrada e Saida
+                                    Entrada e Saída
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">
@@ -114,7 +118,8 @@
                         </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder=" Digite aqui para pesquisar..." aria-label="Search">
+                        <input class="form-control mr-sm-2" type="search" placeholder=" Digite aqui para pesquisar..."
+                            aria-label="Search">
 
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
                             <i class="fas fa-search colorbtn"></i> Pesquisar</button>
@@ -131,45 +136,46 @@
             <div class="modal-body pt-5 pr-5 pb-5 pl-5">
 
 
-            <div class="form-group"> 
-                    <h2>Movimentação</h2>                
-                <div class="row">
-                        <span  class="col-xs-3 col-md-3">
-                                <label for="nome">Tipo de Movimentação</label>
-                                 <select type="text" class="form-control" id="nome" aria-describedby="Nome Help" placeholder="Nome da entrada">
+                <div class="form-group">
+                    <h2>Movimentação</h2>
+                    <div class="row">
+                        <span class="col-xs-3 col-md-3">
+                            <label for="nome">Tipo de Movimentação</label>
+                            <select type="text" class="form-control" id="nome" aria-describedby="Nome Help" placeholder="Nome da entrada">
                                 <option id="entrada">Entrada</option>
                                 <option id="saida">Saída</option>
-                                </select>
-                                <small id="nome" class="form-text text-muted">Digite o nome da entrada.</small>
-                         </span>
-                        <span class="col-xs-3 col-md-3">                                                           
-                                <label for="data">Data</label>
-                                <input type="date" class="form-control" id="data" aria-describedby="Data Help" placeholder="Data de entrada">
-                                <small id="data" class="form-text text-muted">Digite a data de entrada.</small>
+                            </select>
+                            <small id="nome" class="form-text text-muted">Digite o nome da entrada.</small>
                         </span>
-               
-                        <span  class="col-xs-3 col-md-3">
-                             
-                                 <label for="valor">Valor</label>
-                                <input type="number" class="form-control" id="valor" aria-describedby="Valor Help" placeholder="Valor da entrada">
-                                 <small id="valor" class="form-text text-muted">Digite o valor entrada.</small>
-                        </span>                         
+                        <span class="col-xs-3 col-md-3">
+                            <label for="data">Data</label>
+                            <input type="date" class="form-control" id="data" aria-describedby="Data Help" placeholder="Data de entrada">
+                            <small id="data" class="form-text text-muted">Digite a data de entrada.</small>
+                        </span>
 
-             </div>
-                        
+                        <span class="col-xs-3 col-md-3">
+
+                            <label for="valor">Valor</label>
+                            <input type="number" class="form-control" id="valor" aria-describedby="Valor Help"
+                                placeholder="Valor da entrada">
+                            <small id="valor" class="form-text text-muted">Digite o valor entrada.</small>
+                        </span>
+
+                    </div>
+
+                </div>
+                <button class="btn btn-primary" type="submit">Cadastrar</button>
             </div>
-            <button class="btn btn-primary" type="submit">Cadastrar</button>
         </div>
-    </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-        crossorigin="anonymous"></script>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+            crossorigin="anonymous"></script>
 </body>
 
 </html>

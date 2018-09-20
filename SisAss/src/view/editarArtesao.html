@@ -31,61 +31,101 @@
 			<div class="container">
 				<a class="navbar-brand" href="index.html">
 					<div class="imgNav alinLogo">
-						<img src="img/siassVerde.png" class="img-responsive" alt="Logo da Siass"/>
+						<img src="img/siassVerde.png" class="img-responsive" alt="Logo da Siass">
 					</div>
 				</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-				 aria-expanded="false" aria-label="Toggle navigation">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+				 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav mr-auto">
-						<li class="nav-item active"><a class="nav-link" href="index.html"> <i class="fas fa-home"></i>Inicio <span class="sr-only">(current)</span>
-							</a></li>
-						<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-							 aria-haspopup="true" aria-expanded="false"> <i class="fas fa-user"></i> Artesãos
+						<li class="nav-item active">
+							<a class="nav-link" href="index.html">
+								<i class="fas fa-home"></i>Inicio
+								<span class="sr-only">(current)</span>
+							</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+							 aria-haspopup="true" aria-expanded="false">
+								<i class="fas fa-user"></i>
+								Artesãos
 							</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="cadastroArtesao.html"> <i class="fas fa-user-plus"></i> Cadastro de Artesãos
+								<a class="dropdown-item" href="artesaosCadastrados.html">
+									<i class="fas fa-list-ul"></i>
+									Artesãos Cadastrados
+								</a>
+								<a class="dropdown-item" href="cadastroArtesao.html">
+									<i class="fas fa-user-plus"></i>
+									Cadastro de Artesãos
 								</a>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="#"> <i class="far fa-chart-bar"></i> Relatório de Artesãos
-								</a>
+								<a class="dropdown-item" href="#">
+									<i class="far fa-chart-bar"></i>
+									Relatório de Artesãos</a>
 							</div>
 						</li>
-						<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-							 aria-haspopup="true" aria-expanded="false"> <i class="fas fa-boxes"></i> Produtos
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+							 aria-haspopup="true" aria-expanded="false">
+								<i class="fas fa-boxes"></i>
+								Produtos
 							</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="cadastroProduto.html"> <i class="fas fa-box-open"></i> Cadastrar Produto
+								<a class="dropdown-item" href="cadastroProduto.html">
+									<i class="fas fa-box-open"></i>
+									Cadastrar Produto
 								</a>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="#"> <i class="far fa-chart-bar"></i> Relatório de Produtos
-								</a>
+								<a class="dropdown-item" href="#">
+									<i class="far fa-chart-bar"></i>
+									Relatório de Produtos</a>
 							</div>
 						</li>
-						<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-							 aria-haspopup="true" aria-expanded="false"> <i class="fas fa-calendar-alt"></i>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+							 aria-haspopup="true" aria-expanded="false">
+								<i class="fas fa-calendar-alt"></i>
 								Eventos
 							</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="eventos.html"> <i class="far fa-calendar-alt"></i> Cadastrar novo Evento
+								<a class="dropdown-item" href="eventos.html">
+									<i class="far fa-calendar-alt"></i>
+									Cadastrar novo Evento
 								</a>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="#"> <i class="far fa-chart-bar"></i> Relatório de Eventos
-								</a>
+								<a class="dropdown-item" href="#">
+									<i class="far fa-chart-bar"></i>
+									Relatório de Eventos</a>
 							</div>
 						</li>
-						<li class="nav-item"><a class="nav-link disabled" href="movimentacoes.html"> <i class="fas fa-dollar-sign"></i>Movimentações
-							</a></li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+							 aria-haspopup="true" aria-expanded="false">
+								<i class="fas fa-dollar-sign"></i>
+								Movimentações
+
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="movimentacoes.html">
+									<i class="far fa-calendar-alt"></i>
+									Entrada e Saída
+								</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#">
+									<i class="far fa-chart-bar"></i>
+									Dashboard</a>
+							</div>
+						</li>
 					</ul>
 					<form class="form-inline my-2 my-lg-0">
 						<input class="form-control mr-sm-2" type="search" placeholder=" Digite aqui para pesquisar..." aria-label="Search">
 
 						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-							<i class="fas fa-search colorbtn"></i> Pesquisar
-						</button>
+							<i class="fas fa-search colorbtn"></i> Pesquisar</button>
 						<a href="login.html" class="sair">Sair</a>
 					</form>
 				</div>
@@ -111,8 +151,8 @@
 
 				<div class="form-row">
 					<div class="col-md-4 mb-3">
-						<label for="nome">Nome do Artesão</label> <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome do Artesao"
-						 required>
+						<label for="nome">Nome do Artesão</label> <input type="text" class="form-control" id="nome" name="nome"
+						 placeholder="Nome do Artesao" required>
 						<div class="valid-tooltip">Campo Obrigatório</div>
 					</div>
 					<div class="col-md-4 mb-3">
@@ -123,13 +163,14 @@
 					<div class="col-md-4 mb-3">
 						Sexo: <br>
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="sexo" id="sexoMasculino" name="sexo" value="Masculino" checked>
+							<input class="form-check-input" type="radio" name="sexo" id="sexoMasculino" name="sexo" value="Masculino"
+							 checked>
 							<label class="form-check-label" for="sexoMasculino">
 								Masculino </label>
 						</div>
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="sexo" id="sexoFeminino" name="sexo" value="Feminino"> <label class="form-check-label"
-							 for="sexoFeminino"> Feminino </label>
+							<input class="form-check-input" type="radio" name="sexo" id="sexoFeminino" name="sexo" value="Feminino"> <label
+							 class="form-check-label" for="sexoFeminino"> Feminino </label>
 						</div>
 					</div>
 
@@ -148,8 +189,8 @@
 						</select>
 					</div>
 					<div class="col-md-4 mb-3">
-						<label for="numRG">Número de RG</label> <input type="text " class="form-control " id="numRG" name="numRG" placeholder="RG "
-						 required>
+						<label for="numRG">Número de RG</label> <input type="text " class="form-control " id="numRG" name="numRG"
+						 placeholder="RG " required>
 						<div class="invalid-tooltip ">Por favor, insira o RG</div>
 					</div>
 				</div>
@@ -164,17 +205,18 @@
 				<br>
 				<div class="form-row">
 					<div class="col-md-3 mb-3">
-						<label for="cepArtesao">CEP</label> <input type="text " class="form-control" id="cepArtesao" name="cepArtesao" placeholder="00000-000"
-						 onblur="pesquisacep(this.value);" required>
+						<label for="cepArtesao">CEP</label> <input type="text " class="form-control" id="cepArtesao" name="cepArtesao"
+						 placeholder="00000-000" onblur="pesquisacep(this.value);" required>
 						<div class="invalid-tooltip">Insira CEP válido.</div>
 					</div>
 					<div class="col-md-6 mb-3">
-						<label for="rua">Rua</label> <input type="text" class="form-control" id="rua" name="rua" placeholder="Rua" required>
+						<label for="rua">Rua</label> <input type="text" class="form-control" id="rua" name="rua" placeholder="Rua"
+						 required>
 						<div class="invalid-tooltip">Por favor, insira uma rua</div>
 					</div>
 					<div class="col-md-1 mb-3">
-						<label for="numeroEnd">Nº</label> <input type="text" class="form-control " id="numeroEnd" name="numeroEnd" placeholder="Nº"
-						 required>
+						<label for="numeroEnd">Nº</label> <input type="text" class="form-control " id="numeroEnd" name="numeroEnd"
+						 placeholder="Nº" required>
 						<div class="invalid-tooltip">Por favor, insira um rua</div>
 					</div>
 					<div class="col-md-2 mb-3">
@@ -195,7 +237,8 @@
 						<div class="invalid-tooltip ">Insira um estado válido.</div>
 					</div>
 					<div class="col-md-3 mb-3">
-						<label for="uf">Estado</label> <input type="text" class="form-control" id="uf" name="uf" placeholder="Estado" required>
+						<label for="uf">Estado</label> <input type="text" class="form-control" id="uf" name="uf" placeholder="Estado"
+						 required>
 						<div class="invalid-tooltip ">Insira um estado válido.</div>
 					</div>
 
@@ -206,26 +249,32 @@
 				<div class="form-row">
 					<div class="col-md-4 mb-3">
 						<label for="emailArtesao">E-mail</label> <input type="email " class="form-control" id="emailArtesao" name="emailArtesao"
-						 placeholder="E-mail">
+						 placeholder="E-mail" />
 					</div>
 					<div class="col-md-4 mb-3">
-						<label for="celular">Celular</label> <input type="text" class="form-control" id="celular" name="celular" placeholder="Celular"/>
+						<label for="celular">Celular</label> <input type="text" class="form-control" id="celular" name="celular"
+						 placeholder="Celular" />
 					</div>
 					<div class="col-md-4 mb-3">
-						<label for="telefone">Telefone</label> <input type="text " class="form-control" id="telefone" name="telefone" placeholder="Telefone"/>
+						<label for="telefone">Telefone</label> <input type="text " class="form-control" id="telefone" name="telefone"
+						 placeholder="Telefone" />
 					</div>
 				</div>
 				<hr>
-				<button class="btn btn-primary" type="submit" href="eventos.html">Salvar</button>
-		</div>
-		</form>
+				<div class="row">
+					<div class="col-md-3 offset-md-10"><button class="btn btn-primary" type="submit" href="eventos.html"><i class="far fa-save colorFas"></i>
+							Salvar</i></button></div>
+				</div>
 
+
+			</form>
+		</div>
 	</div>
 	<br>
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script>
-		document.getElementById('frmAction').action='artesao/'+id;	
+		document.getElementById('frmAction').action = 'artesao/' + id;	
 	</script>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 	 crossorigin="anonymous "></script>
