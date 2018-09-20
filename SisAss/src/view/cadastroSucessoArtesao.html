@@ -1,9 +1,7 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <!--  Carrega Scripts principais -->
-    <script src="js/customJavaScript.js"></script>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,8 +13,7 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
-    <!--API AXIOS-->
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <link rel="stylesheet" href="css/base.css">
     <link rel="shortcut icon" type="image/x-icon" href="img/siassVerde.png" />
     <title>SiAss</title>
@@ -32,8 +29,8 @@
                         <img src="img/siassVerde.png" class="img-responsive" alt="Logo da Siass">
                     </div>
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -41,20 +38,24 @@
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
                             <a class="nav-link" href="index.html">
-                                <i class="fas fa-home"></i>Inicio
+                                <i class="fas fa-home"></i>Início
                                 <span class="sr-only">(current)</span>
                             </a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
                                 <i class="fas fa-user"></i>
-                                Artesaos
+                                Artesãos
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="artesaosCadastrados.html">
+                                    <i class="fas fa-user-plus"></i>
+                                    Artesãos Cadastrados
+                                </a>
                                 <a class="dropdown-item" href="cadastroArtesao.html">
                                     <i class="fas fa-user-plus"></i>
-                                    Cadastro de Artesaos
+                                    Cadastro de Artesãos
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">
@@ -63,8 +64,8 @@
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
                                 <i class="fas fa-boxes"></i>
                                 Produtos
                             </a>
@@ -80,8 +81,8 @@
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
                                 <i class="fas fa-calendar-alt"></i>
                                 Eventos
                             </a>
@@ -116,8 +117,7 @@
                         </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder=" Digite aqui para pesquisar..."
-                            aria-label="Search">
+                        <input class="form-control mr-sm-2" type="search" placeholder=" Digite aqui para pesquisar..." aria-label="Search">
 
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
                             <i class="fas fa-search colorbtn"></i> Pesquisar</button>
@@ -130,17 +130,13 @@
     <!--Inicio do container-->
     <div class="container">
         <div class="containerBody">
-            <h2>Artesãos Cadastrados</h2>
+            <h2></h2>            
             <hr>
-            <div class="form-row">
-                <div class="col-md-10 mb-3">
-                    <ul class=" list-group" id="lista">
-                    </ul>
-                </div>
-            </div>
+            <img src="img/icone_ok1.png" alt="Atualizado com Sucesso" style="text-align: center;">
+          
         </div>
     </div>
-    
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

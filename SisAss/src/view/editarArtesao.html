@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -22,85 +22,6 @@
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<link rel="stylesheet" href="css/base.css">
 	<title>SiAss</title>
-	<script>
-		//Traz o id
-		let queryString = window.location.search;
-		let id = queryString.split('=')[1];
-		console.log(id + ' tô na pagina do artesão hahahahah');
-
-
-		let x = JSON.parse(server());
-		console.log(x);
-		//escrever(x);
-		function escrever(conteudo) {
-			console.log(conteudo);
-			if (!("erro" in conteudo)) {
-				// Atualiza os campos com os valores.
-				document.getElementById('nome').value = (conteudo.nome);
-				document.getElementById('dataDeNascimento').value = (conteudo.dataDeNascimento);
-				document.getElementById('sexo').value = (conteudo.sexo);
-				document.getElementById('naturalidadeUF').value = (conteudo.naturalidadeUF);
-				document.getElementById('naturalidadeMU').value = (conteudo.naturalidadeMU);
-				document.getElementById('numRG').value = (conteudo.numRG);
-				document.getElementById('cepArtesao').value = (conteudo.cepArtesao);
-				document.getElementById('complemento').value = (conteudo.complemento);
-				document.getElementById('bairro').value = (conteudo.bairro);
-				document.getElementById('cidade').value = (conteudo.cidade);
-				document.getElementById('uf').value = (conteudo.uf);
-				document.getElementById('emailArtesao').value = (conteudo.emailArtesao);
-				document.getElementById('celular').value = (conteudo.celular);
-				document.getElementById('telefone').value = (conteudo.telefone);
-			}
-			else {
-				alert("não encontrado.");
-			}
-		}
-		function limparForm() {
-			document.getElementById('nome').value = ("");
-			document.getElementById('dataDeNascimento').value = ("");
-			//document.getElementById('sexo').value = ("");
-			document.getElementById('naturalidadeUF').value  = ("");
-			//document.getElementById('naturalidadeMU').value = ("");
-			document.getElementById('numRG').value = ("");
-			escrever(x);
-		}
-
-		function server() {
-			var http;
-			var return__;
-			try {
-				http = new XMLHttpRequest();
-				http.open("GET", "http://localhost:3000/artesao/" + id, false);
-				http.onreadystatechange = function (e) {
-					if (http.readyState === 4) {
-						if (http.status === 200) {
-							return__ = http.responseText;
-						} else {
-							console.log('error: ' + http.statusText);
-						}
-					}
-				};
-				http.send(null);
-				return return__;
-			}
-			catch (e) {
-				console.log(e);
-			}
-		}
-
-		function update() {
-
-            axios.put(`/${id}`, { nome: input.value })
-                .then((response) => {
-					console.log('Deu certo?');
-                })
-                .catch(function (error) {
-                    console.log(error);
-                });
-
-		}
-
-	</script>
 </head>
 
 <body>
@@ -176,16 +97,17 @@
 		<div class="containerBody">
 			<script type="text/javascript">
 				window.onload = function () {
-					limparForm();
+					escrever(artesaoJson);
 				}
 			</script>
 			<h2>Editar Artesão</h2>
 			<hr>
 			<h4>Dados Pessoas</h4>
+			<a href="SisAss/src/view/cadastroSucessoArtesao.html" class="imgSucess"></a>
 			<br>
 			<!--action="/artesao" method="POST"-->
 			<form class="needs-validation" method="POST" id="frmAction">
-				<input type="hidden" name="_METHOD" value="PUT"/>
+				<!--<input type="hidden" name="_METHOD" value="PUT"/>-->
 
 				<div class="form-row">
 					<div class="col-md-4 mb-3">
@@ -294,7 +216,7 @@
 					</div>
 				</div>
 				<hr>
-				<button class="btn btn-primary" type="submit">Salvar</button>
+				<button class="btn btn-primary" type="submit" href="eventos.html">Salvar</button>
 		</div>
 		</form>
 
@@ -303,7 +225,7 @@
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script>
-		document.getElementById('frmAction').action='/artesao/'+id;	
+		document.getElementById('frmAction').action='artesao/'+id;	
 	</script>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 	 crossorigin="anonymous "></script>

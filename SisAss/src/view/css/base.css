@@ -32,6 +32,15 @@
     body {
         background-color: white !important;
     }
+    li::after .btn-danger{
+        padding: 5px;
+        padding-right: 12px;
+        padding-left: 12px;
+        margin-left: 5px;
+        background-color: rgb(27, 150, 231);
+    }
+/*Customização botoes editar e excluir
+--------------------------------------------------------------------*/
 }
 
 /*Customização do botão
@@ -46,7 +55,7 @@
     padding: 20px;
     
 }
-li .btn-danger{
+ li .btn-danger{
     padding: 5px;
     padding-right: 12px;
     padding-left: 12px;

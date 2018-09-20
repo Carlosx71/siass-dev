@@ -1,6 +1,7 @@
 //Importando a model
 const mongoose = require('mongoose');
 const Artesao = mongoose.model('Artesao');
+const path = require('path'); 
 
 exports.get = (req, res, next) => {
     Artesao.find()
@@ -10,6 +11,13 @@ exports.get = (req, res, next) => {
             res.status(400).send(e);
         });
 };
+
+
+exports.cadasSucess = (req, res, next) => {
+
+    res.sendFile(200, path.resolve('../view/cadastroSucessoArtesao.html'));
+};
+
 
 //Rotas
 //Rota de criação //Status 201 = Create //Movido na aula 12
@@ -57,9 +65,9 @@ exports.post = (req, res, next) => {
                 telefone: req.body.telefone
             }
         }).then(x => {
-            res.status(201).send({
-                message: 'Artesao atualizado com sucesso'
-            });
+           //res.path.resolve();
+           res.redirect('http://localhost:3000/cadastroSucessoArtesao.html');
+            //res.status(201).send({                message: 'Artesao atualizado com sucesso'            });
         }).catch(e => {
             res.status(400).send({
                 message: 'Falha ao atualizar artesao',
