@@ -70,6 +70,22 @@ li .btn-danger {
     border-color: #28a745 !important;
 }
 
+.btnNovo{ 
+    margin-top: 10px;
+    padding: 6px;
+}
+
+.btnNovo button{ 
+
+    padding: 5px;
+    padding-right: 8px;
+    padding-left: 8px;
+    
+}
+
+.btnNovo .fas {
+    color: white;
+}
 /*Customizacao da tela de Login em Desktop
 --------------------------------------------------------------------*/
 

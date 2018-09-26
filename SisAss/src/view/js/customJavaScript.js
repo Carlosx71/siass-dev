@@ -2086,3 +2086,10 @@ function escrever(conteudo) {
 	document.getElementById('telefone').value = (conteudo.telefone);
 }
 /*######################## Fim do preenchimento ########################*/
+
+/*################ Redireciona para Cadastrar Artesão ##################*/
+
+function cadasArt() {
+
+	window.location = "cadastroArtesao.html";
+}
