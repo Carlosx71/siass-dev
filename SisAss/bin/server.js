@@ -8,7 +8,7 @@ const express = require('express');
 
 
 //configurando a porta do servidor
-const port = normalizePort(process.env.PORT || '3000');
+const port = normalizePort(process.env.PORT || '80');
 app.set('port', port);
 
 //Instânciando o servidor

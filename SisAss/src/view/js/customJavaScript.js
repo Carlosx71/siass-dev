@@ -2028,11 +2028,16 @@ function redirect(id) {
 
 /*######################## Preenchimento do fomulario ########################*/
 //Busca o id da pagina anterior
+
+
+
+//let artesaoJson = JSON.parse(testeServer());
 let queryString = window.location.search;
 let id = queryString.split('=')[1];
 console.log(id + ' tô na pagina do artesão');
 
 let artesaoJson = JSON.parse(server());
+console.log(artesaoJson)
 
 //Traz os arquivo do servidor
 function server() {
@@ -2042,7 +2047,7 @@ function server() {
 		http = new XMLHttpRequest();
 		console.log(http);
 		//Inicializando uma requisição
-		http.open("GET", "http://localhost:3000/artesao/" + id, false);
+		http.open("GET", "http://localhost/artesao/" + id, false);
 		http.onreadystatechange = function (e) {
 			if (http.readyState === 4) {
 				if (http.status === 200) {
@@ -2061,7 +2066,7 @@ function server() {
 	}
 }
 
-console.log(artesaoJson);
+//console.log(artesaoJson);
 function escrever(conteudo) {
 	console.log(conteudo);
 	document.getElementById('nome').value = (conteudo.nome);

@@ -66,7 +66,7 @@ exports.post = (req, res, next) => {
             }
         }).then(x => {
            //res.path.resolve();
-           res.redirect('http://localhost:3000/cadastroSucessoArtesao.html');
+           res.redirect('http://localhost/cadastroSucessoArtesao.html');
             //res.status(201).send({                message: 'Artesao atualizado com sucesso'            });
         }).catch(e => {
             res.status(400).send({

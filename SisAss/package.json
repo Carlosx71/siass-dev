@@ -2,7 +2,7 @@
   "name": "SisAss",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node ./bin/server.js"
   },
@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "chart.js": "^2.7.2",
     "debug": "^3.1.0",
     "express": "^4.16.3",
     "http": "0.0.0",
