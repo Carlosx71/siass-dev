@@ -18,7 +18,16 @@ exports.cadasSucess = (req, res, next) => {
     res.sendFile(200, path.resolve('../view/cadastroSucessoArtesao.html'));
 };
 
+exports.agregaArt = (req, res, next) => {
+    console.log('entrei na rota')
 
+    Artesao.countDocuments({sexo: 'Masculino'}, ( err, count) => {
+        //res.sendStatus(200).send(count);
+        res.status(200).json({ count: count });
+        console.log( "Number of sexo masc:", count );
+    })
+
+};
 //Rotas
 //Rota de criação //Status 201 = Create //Movido na aula 12
 exports.post = (req, res, next) => {
