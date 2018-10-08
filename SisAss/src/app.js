@@ -15,7 +15,7 @@ mongoose.connect("mongodb://siassmaster:siass4321@ds018508.mlab.com:18508/siassm
 const Product = require('./models/product');
 const Artesao = require('./models/artesao');
 //carrega a pasta com as views, css e js
-app.use(express.static('../src/view/'));
+app.use(express.static('../src/public/'));
 
 //carregar rotas que estão em index
 const indexRoute = require('./routes/index-route');

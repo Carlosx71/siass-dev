@@ -1976,7 +1976,7 @@ function del(element) {
 	//Verifica se existe a classe "delete"
 	if (element.target.classList.contains('delete')) {
 		//Busca o id que estao no atributo data-id
-		
+
 		resultConfirm = confirm('Tem certeza que deseja excluir?');
 		if (resultConfirm == true) {
 			const id = element.target.dataset.id;
@@ -1986,13 +1986,15 @@ function del(element) {
 					if (response.status = 200) {
 						//busca o filho na propriedade path e exclui (no caso a li)
 						lista.removeChild(element.path[1]);
-						location.reload();
+
 					}
 				})
 				.catch(function (error) {
 					console.log(error);
 				});
+			
 		}
+		location.reload();
 	}
 
 }
@@ -2008,7 +2010,7 @@ function getArtesao(element) {
 			.then((response) => {
 
 				console.log('entrei no response');
-				
+
 				redirect(id);
 			})
 			.catch((error) => {

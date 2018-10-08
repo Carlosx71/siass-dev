@@ -15,7 +15,7 @@ exports.get = (req, res, next) => {
 
 exports.cadasSucess = (req, res, next) => {
 
-    res.sendFile(200, path.resolve('../view/cadastroSucessoArtesao.html'));
+    res.sendFile(200, path.resolve('../public/cadastroSucessoArtesao.html'));
 };
 
 exports.agregaArt = (req, res, next) => {
@@ -51,7 +51,7 @@ exports.post = (req, res, next) => {
     });
 }*/
 
-exports.post = (req, res, next) => {
+exports.update = (req, res, next) => {
     Artesao
         .findByIdAndUpdate(req.params.id, {
             //$set seta o que veio da requisao
@@ -154,11 +154,11 @@ exports.delete = (req, res, next) => {
         })
         .then(x => {
             res.status(200).send({
-                message: 'Deu certo caralho!!!!'
+                message: 'Artesão excluído com sucesso'
             });
         }).catch(e => {
             res.status(400).send({
-                message: 'Mas que caralho, velho',
+                message: 'Falha ao excluir artesão',
                 data: e
             });
         });

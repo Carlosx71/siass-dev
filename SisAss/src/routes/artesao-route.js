@@ -3,7 +3,7 @@ const router = express.Router();
 const controller = require('../controllers/artesao-controller');
 
 router.post('/',controller.post);
-router.post('/:id',controller.post);
+router.post('/:id',controller.update);
 router.get('/agregados',controller.agregaArt);
 //router.delete('/',controller.delete);
 router.get('/:id', controller.getById);
