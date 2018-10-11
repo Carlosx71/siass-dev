@@ -13,12 +13,24 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
+    <!--API AXIOS-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!--CDN para grafico de barras-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <!--Css Customizado-->
     <link rel="stylesheet" href="css/base.css">
     <link rel="shortcut icon" type="image/x-icon" href="img/siassVerde.png" />
     <title>SiAss</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -139,25 +151,78 @@
             <div class="form-row">
                 <div class="col-md-2 mb-3 border">
                 </div>
+
                 <div class="col-md-5 mb-3">
                     <canvas id="artesaoGBarUF" width="200" height="200"></canvas>
                     <script>
+                        let url = 'http://localhost/artesao/countMG';
+                        function count(url) {
+                            var http;
+                            var return__;
+                            try {
+                                http = new XMLHttpRequest();
+                                console.log(http);
+                                //Inicializando uma requisição
+                                http.open("GET", url, false);
+                                http.onreadystatechange = function (e) {
+                                    if (http.readyState === 4) {
+                                        if (http.status === 200) {
+                                            return__ = http.responseText;
+                                            console.log(return__);
+                                        } else {
+                                            console.log('error: ' + http.statusText);
+                                        }
+                                    }
+                                };
+                                http.send(null);
+                                return return__;
+                            }
+                            catch (e) {
+                                console.log(e);
+                            }
+                        }
+                        let count1 = JSON.parse(count(url));
+                        console.log(count1.count);
                         //Graficio Artesão
                         var ctx = document.getElementById("artesaoGBarUF");
+                        var obj = [count1.count, 5,12,5,9,8,2,3,9,11,4,12,19,20,4,22,21,20,14,5,12,15,16,11,14,15,21];
+                        //obj.push(15, 20);
+                        //alert(obj);
                         var myChart = new Chart(ctx, {
                             type: 'bar',
                             data: {
-                                labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+                                labels: ["AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO"],
                                 datasets: [{
                                     label: 'Artesão por estado',
-                                    data: [12, 19, 3, 5, 2, 3],
+                                    data: obj,
                                     backgroundColor: [
                                         'rgba(255, 99, 132, 0.2)',
                                         'rgba(54, 162, 235, 0.2)',
                                         'rgba(255, 206, 86, 0.2)',
                                         'rgba(75, 192, 192, 0.2)',
                                         'rgba(153, 102, 255, 0.2)',
-                                        'rgba(255, 159, 64, 0.2)'
+                                        'rgba(255, 159, 64, 0.2)',
+                                        'rgba(25,25,112, 0.2)',
+                                        'rgba(112,128,144, 0.2)',
+                                        'rgba(0,0,0, 0.2)',
+                                        'rgba(0,100,0, 0.2)',
+                                        'rgba(255,222,173, 0.2)',
+                                        'rgba(128,0,0, 0.2)',
+                                        'rgba(250,128,114, 0.2)',
+                                        'rgba(245,245,220, 0.2)',
+                                        'rgba(216,191,216, 0.2)',
+                                        'rgba(255,215,0, 0.2)',
+                                        'rgba(255,99,71, 0.2)',
+                                        'rgba(220,20,60, 0.2)',
+                                        'rgba(255,20,147, 0.2)',
+                                        'rgba(188,143,143, 0.2)',
+                                        'rgba(85,107,47, 0.2)',
+                                        'rgba(0,255,0, 0.2)',
+                                        'rgba(47,79,79, 0.2)',
+                                        'rgba(0,255,127, 0.2)',
+                                        'rgba(0,0,139, 0.2)',
+                                        'rgba(245,255,250, 0.2)',
+                                        'rgba(255,69,0, 0.2)'
                                     ],
                                     borderColor: [
                                         'rgba(255,99,132,1)',
@@ -165,7 +230,31 @@
                                         'rgba(255, 206, 86, 1)',
                                         'rgba(75, 192, 192, 1)',
                                         'rgba(153, 102, 255, 1)',
-                                        'rgba(255, 159, 64, 1)'
+                                        'rgba(255, 159, 64, 1)',
+                                        'rgba(135,206,250,1)',
+                                        'rgba(46,139,87,1)',
+                                        'rgba(50,205,50, 1)',
+                                        'rgba(85,107,47, 1)',
+                                        'rgba(139,69,19, 1)',
+                                        'rgba(188,143,143, 1)',
+                                        'rgba(245,222,179, 1)',
+                                        'rgba(222,184,135, 1)',
+                                        'rgba(147,112,219, 1)',
+                                        'rgba(75,0,130, 1)',
+                                        'rgba(128,0,128, 1)',
+                                        'rgba(218,112,214, 1)',
+                                        'rgba(199,21,133,1)',
+                                        'rgba(220,20,60, 1)',
+                                        'rgba(128,0,0, 1)',
+                                        'rgba(165,42,42, 1)',
+                                        'rgba(233,150,122, 1)',
+                                        'rgba(255,127,80, 1)',
+                                        'rgba(255,140,0,1)',
+                                        'rgba(255,215,0, 1)',
+                                        'rgba(255,255,0, 1)',
+                                        'rgba(216,191,216, 1)',
+                                        'rgba(175,238,238, 1)',
+                                        'rgba(245,245,245, 1)'
                                     ],
                                     borderWidth: 1
                                 }]
@@ -179,6 +268,7 @@
                                     }]
                                 }
                             }
+
                         });
                     </script>
                 </div>
@@ -209,14 +299,7 @@
             </div>
         </div>
 
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-            crossorigin="anonymous"></script>
+
 </body>
 
 </html>

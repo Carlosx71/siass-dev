@@ -1992,12 +1992,11 @@ function del(element) {
 				.catch(function (error) {
 					console.log(error);
 				});
-			
-		}
+		};
 		location.reload();
-	}
+	};
 
-}
+};
 /*######################## Fim da operação de delete * ########################*/
 
 //			lista.innerHTML += templateLi(element._id, element.nome);
@@ -2037,19 +2036,20 @@ function redirect(id) {
 let queryString = window.location.search;
 let id = queryString.split('=')[1];
 console.log(id + ' tô na pagina do artesão');
-
-let artesaoJson = JSON.parse(server());
+let urlID = "http://localhost/artesao/";
+let artesaoJson = JSON.parse(server(urlID));
 console.log(artesaoJson)
 
 //Traz os arquivo do servidor
-function server() {
+function server(url) {
+	console.log(urlID);
 	var http;
 	var return__;
 	try {
 		http = new XMLHttpRequest();
 		console.log(http);
 		//Inicializando uma requisição
-		http.open("GET", "http://localhost/artesao/" + id, false);
+		http.open("GET", url + id, false);
 		http.onreadystatechange = function (e) {
 			if (http.readyState === 4) {
 				if (http.status === 200) {
@@ -2100,3 +2100,15 @@ function cadasArt() {
 
 	window.location = "cadastroArtesao.html";
 }
+/*################ Fim Redireciona para Cadastrar Artesão##################*/
+
+/*################ Redireciona para Cadastrar Artesão ##################*/
+function testeJson() {
+	axios.get('/artesao/agregados')
+	.then((response) => {
+		console.log(response)
+	})
+	.catch((error) => {
+		console.log(error);
+	});
+};

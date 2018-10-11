@@ -1,7 +1,7 @@
 //Importando a model
 const mongoose = require('mongoose');
 const Artesao = mongoose.model('Artesao');
-const path = require('path'); 
+const path = require('path');
 
 exports.get = (req, res, next) => {
     Artesao.find()
@@ -18,16 +18,25 @@ exports.cadasSucess = (req, res, next) => {
     res.sendFile(200, path.resolve('../public/cadastroSucessoArtesao.html'));
 };
 
-exports.agregaArt = (req, res, next) => {
+exports.countMG = (req, res, next) => {
     console.log('entrei na rota')
 
-    Artesao.countDocuments({sexo: 'Masculino'}, ( err, count) => {
-        //res.sendStatus(200).send(count);
+    Artesao.countDocuments({ uf: 'SP', uf: 'MG' }, (err, count) => {
+        console.log(count.uf);
         res.status(200).json({ count: count });
-        console.log( "Number of sexo masc:", count );
-    })
-
+        console.log("Number of sexo masc:", count);
+    });
 };
+
+//Conta todos que estão dentro do count
+//exports.countMG = (req, res, next) => {
+//    console.log('entrei na rota')
+//
+//    Artesao.countDocuments({ uf: 'SP', uf: 'MG' }, (err, count) => {
+//        res.status(200).json({ count: count });
+//        console.log("Number of sexo masc:", count);
+//    });
+//};
 //Rotas
 //Rota de criação //Status 201 = Create //Movido na aula 12
 exports.post = (req, res, next) => {
@@ -74,8 +83,8 @@ exports.update = (req, res, next) => {
                 telefone: req.body.telefone
             }
         }).then(x => {
-           //res.path.resolve();
-           res.redirect('http://localhost/cadastroSucessoArtesao.html');
+            //res.path.resolve();
+            res.redirect('http://localhost/cadastroSucessoArtesao.html');
             //res.status(201).send({                message: 'Artesao atualizado com sucesso'            });
         }).catch(e => {
             res.status(400).send({
