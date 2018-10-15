@@ -181,11 +181,132 @@
                                 console.log(e);
                             }
                         }
-                        let count1 = JSON.parse(count(url));
-                        console.log(count1.count);
+                        let estadosCount = JSON.parse(count(url));
+                        console.log(estadosCount[21].count + ' este e o count ' + estadosCount[21]._id.uf);
+                        let obj = [];
+                        let AC; let AL; let AP; let AM; let BA; let CE; let DF; let ES; let GO; let MA; let MT; let MS; let MG; let PA;
+                        let PB; let PR; let PE; let PI; let RJ; let RN; let RS; let RO; let RR; let SC; let SP; let SE; let TO;
+                        console.log(estadosCount[22].count + 'aaaa') ;
+
+                        if (estadosCount[21]._id.uf = 'AC'){
+                            AC = estadosCount[21].count;
+                            console.log(AC + ' AC testando');
+                        }
+                        if (estadosCount[17]._id.uf = 'AL'){
+                            AL = estadosCount[17].count;
+                            console.log(AL + ' AL testando')
+                        }
+                        if (estadosCount[16]._id.uf = 'AP'){
+                            AP = estadosCount[16].count;
+                            console.log(AP + ' AP testando')
+                        }
+                        if (estadosCount[9]._id.uf = 'AM'){
+                            AM = estadosCount[9].count;
+                            console.log(AL + ' AM testando')
+                        }
+                        if (estadosCount[8]._id.uf = 'BA'){
+                            BA = estadosCount[8].count;
+                            console.log(BA + ' BA testando')
+                        }
+                        if (estadosCount[7]._id.uf = 'CE'){
+                            CE = estadosCount[7].count;
+                            console.log(AL + ' CE testando')
+                        }
+                        if (estadosCount[6]._id.uf = 'DF'){
+                            DF = estadosCount[6].count;
+                            console.log(DF + ' DF testando')
+                        }
+                        if (estadosCount[14]._id.uf = 'ES'){
+                            ES = estadosCount[14].count;
+                            console.log(ES + ' ES testando')
+                        }
+                        if (estadosCount[3]._id.uf = 'GO'){
+                            console.log(estadosCount[3]._id.uf)
+                            GO = estadosCount[3].count;
+                            console.log(GO + ' GO testando')
+                        }
+                        if (estadosCount[13]._id.uf = 'MA'){
+                            MA = estadosCount[13].count;
+                            console.log(MA + ' MA testando')
+                        }
+                        if (estadosCount[19]._id.uf = 'MT'){
+                            MT = estadosCount[19].count;
+                            console.log(MT + ' MT testando')
+                        }
+                        if (estadosCount[20]._id.uf = 'MS'){
+                            MS = estadosCount[20].count;
+                            console.log(MS + ' MS testando')
+                        }
+                        if (estadosCount[10]._id.uf = 'MG'){
+                            MG = estadosCount[10].count;
+                            console.log(MG + ' MG testando')
+                        }
+                        if (estadosCount[18]._id.uf = 'PA'){
+                            PA = estadosCount[18].count;
+                            console.log(PA + ' PA testando')
+                        }
+                        if (estadosCount[20]._id.uf = 'PB'){
+                            PB = estadosCount[20].count;
+                            console.log(PB + ' PB testando')
+                        }
+                        if (estadosCount[15]._id.uf = 'PR'){
+                            PR = estadosCount[15].count;
+                            console.log(AL + ' PR testando')
+                        }
+                        if (estadosCount[25]._id.uf = 'PE'){
+                            PE = estadosCount[25].count;
+                            console.log(PE + ' PE testando')
+                        }
+                        if (estadosCount[24]._id.uf = 'PI'){
+                            PI = estadosCount[24].count;
+                            console.log(PI + ' PI testando')
+                        }
+                        if (estadosCount[11]._id.uf = 'RJ'){
+                            RJ = estadosCount[11].count;
+                            console.log(RJ + ' RJ testando')
+                        }
+                        if (estadosCount[26]._id.uf = 'RN'){
+                            RN = estadosCount[26].count;
+                            console.log(RN + ' RN testando')
+                        }
+                        if (estadosCount[12]._id.uf = 'RS'){
+                            RS = estadosCount[12].count;
+                            console.log(RS + ' RS testando')
+                        }
+                        if (estadosCount[23]._id.uf = 'RO'){
+                            RO = estadosCount[23].count;
+                            console.log(RO + ' RO testando')
+                        }
+                        if (estadosCount[5]._id.uf = 'RR'){
+                            RR = estadosCount[5].count;
+                            console.log(RR + ' RR testando')
+                        }
+                        if (estadosCount[2]._id.uf = 'SC'){
+                            SC = estadosCount[2].count;
+                            console.log(SC + ' SC testando')
+                        }
+                        if (estadosCount[1]._id.uf = 'SP'){
+                            SP = estadosCount[1].count;
+                            console.log(SP + ' SP testando')
+                        }
+                        if (estadosCount[0]._id.uf = 'SE'){
+                            SE = estadosCount[0].count;
+                            console.log(SE + ' SE testando')
+                        }
+                        if (estadosCount[4]._id.uf = 'TO'){
+                            TO = estadosCount[4].count;
+                            console.log(TO + ' TO testando')
+                        }
+
+                        obj.push(
+                            AC, AL, AP, AM, BA, CE, DF, ES, GO, MA, MT, MS, MG, PA,
+                            PB, PR, PE, PI, RJ, RN, RS, RO, RR, SC, SP, SE, TO
+                        )
+
                         //Graficio Artesão
                         var ctx = document.getElementById("artesaoGBarUF");
-                        var obj = [count1.count, 5,12,5,9,8,2,3,9,11,4,12,19,20,4,22,21,20,14,5,12,15,16,11,14,15,21];
+                        //var obj = [count1.count, 5,12,5,9,8,2,3,9,11,4,12,19,20,4,22,21,20,14,5,12,15,16,11,14,15,21];
+
                         //obj.push(15, 20);
                         //alert(obj);
                         var myChart = new Chart(ctx, {
