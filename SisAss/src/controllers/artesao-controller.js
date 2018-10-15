@@ -30,12 +30,10 @@ exports.countMG = (req, res, next) => {
     //    {$group: {_id: {poll_id: '$poll_id', option: '$option'}, count: {$sum: 1}}}
     //).exec(...);
     Artesao.aggregate([
-        {$group: {_id: {uf: '$uf'}, count: {$sum: 1}}}], (err, count) => {
-            //console.log(count.uf);
+        {$group: {_id: {uf: '$uf'}, count: {$sum: 1} }}], (err, count) => {
             res.status(200).json(count);
             console.log("Number of sexo masc:", count);
         });
-    
 };
 
 //Conta todos que estão dentro do count
