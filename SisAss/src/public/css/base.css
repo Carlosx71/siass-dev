@@ -39,6 +39,10 @@
         margin-left: 5px;
         background-color: rgb(27, 150, 231);
     }
+    .barEstado {
+        width: 400px;
+        height: 400px;
+    }
     /*Customização botoes editar e excluir
 --------------------------------------------------------------------*/
 }
@@ -170,4 +174,9 @@ body {
 
 .atuaSucess {
     text-align: center;
+}
+
+.reportIcon{
+    width: 150px;
+    height: 150px;
 }

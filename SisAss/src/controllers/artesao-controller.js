@@ -19,20 +19,10 @@ exports.cadasSucess = (req, res, next) => {
 };
 
 exports.countMG = (req, res, next) => {
-    console.log('entrei na rota')
-
-    //Artesao.countDocuments({ uf: 'SP', uf: 'MG' }, (err, count) => {
-    //    console.log(count.uf);
-    //    res.status(200).json({ count: count });
-    //    console.log("Number of sexo masc:", count);
-    //});
-    //Choice.aggregate(
-    //    {$group: {_id: {poll_id: '$poll_id', option: '$option'}, count: {$sum: 1}}}
-    //).exec(...);
     Artesao.aggregate([
         {$group: {_id: {uf: '$uf'}, count: {$sum: 1} }}], (err, count) => {
             res.status(200).json(count);
-            console.log("Number of sexo masc:", count);
+            //console.log("Number of sexo masc:", count);
         });
 };
 

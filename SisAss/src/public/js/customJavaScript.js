@@ -1932,6 +1932,32 @@ window.onload = () => {
 	listaArtesao.addEventListener('click', getArtesao);
 	read();
 };
+
+window.onload = () => {
+	const listRt = document.querySelector('#listArtEstado');
+	listReport();
+};
+
+function templateListReport(id, nome, uf) {
+	return `
+			<li class="list-group-item"><b>${nome} ${uf}</b>
+	
+			</li>
+            `;
+}
+function listReport(){
+	listArtEstado.innerHTML = '';
+	axios.get('/artesao')
+	.then((response) => {
+		console.log(response);
+		response.data.forEach(element => {
+			listArtEstado.innerHTML += templateListReport(element._id, element.nome, element.uf);
+		});
+	})
+	.catch((error) => {
+		console.log(error);
+	});
+}
 /*
  ######################## Criação do Templete da lista* ########################*/
 
@@ -2101,14 +2127,3 @@ function cadasArt() {
 	window.location = "cadastroArtesao.html";
 }
 /*################ Fim Redireciona para Cadastrar Artesão##################*/
-
-/*################ Redireciona para Cadastrar Artesão ##################*/
-function testeJson() {
-	axios.get('/artesao/agregados')
-	.then((response) => {
-		console.log(response)
-	})
-	.catch((error) => {
-		console.log(error);
-	});
-};
