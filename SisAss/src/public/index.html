@@ -72,7 +72,7 @@
                                     Cadastro de Artesãos
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="relatoriosArtesao.html">
                                     <i class="far fa-chart-bar"></i>
                                     Relatório de Artesãos</a>
                             </div>
@@ -182,155 +182,135 @@
                             }
                         }
                         let estadosCount = JSON.parse(count(url));
-                        console.log(estadosCount)
-                        //console.log(estadosCount[21].count + ' este e o count ' + estadosCount[17]._id.uf);
-                        //console.log(estadosCount[26].count)
-                        let obj = [];
                         let AC = 0; let AL = 0; let AP = 0; let AM = 0; let BA = 0; let CE = 0; let DF = 0; let ES = 0; let GO = 0; let MA = 0; let MT = 0; let MS = 0; let MG = 0; let PA = 0;
                         let PB = 0; let PR = 0; let PE = 0; let PI = 0; let RJ = 0; let RN = 0; let RS = 0; let RO = 0; let RR = 0; let SC = 0; let SP; let SE; let TO;
-                        //console.log(estadosCount[22].count + 'aaaa');
-                        //let teste2 = testeF => estadosCount._id.uf == 'MG';
-                        //
-                        //console.log(teste2.filter(estadosCount.filter(teste2)))
-                        //
-                        //let teste = estadosCount.filter(function (obj) {
-                        //    return obj._id.uf == 'MG'
-                        //});
+
+                        for (let i = 0; i < estadosCount.length; i++) {
+
+                            if (estadosCount[i]._id.uf == 'AC') {
+                                AC = estadosCount[i].count
+                                console.log(AC + ' AC testando');
+                            }
+                            if (estadosCount[i]._id.uf == 'AL') {
+                                AL = estadosCount[i].count;
+                                console.log(AL + ' AL testando')
+                            }
+                            if (estadosCount[i]._id.uf == 'AP') {
+                                AP = estadosCount[i].count;
+                                console.log(AP + ' AP testando')
+                            }
+                            if (estadosCount[i]._id.uf == 'AC') {
+                                AC = estadosCount[i].count
+                                console.log(AC + ' AC testando');
+                            }
+                            if (estadosCount[i]._id.uf == 'AL') {
+                                AL = estadosCount[i].count;
+                                console.log(AL + ' AL testando')
+                            }
+                            if (estadosCount[i]._id.uf == 'AP') {
+                                AP = estadosCount[i].count;
+                                console.log(AP + ' AP testando')
+                            }
+                            if (estadosCount[i]._id.uf == 'AM') {
+                                AM = estadosCount[i].count;
+                                console.log(AL + ' AM testando')
+                            }
+                            if (estadosCount[i]._id.uf == 'BA') {
+                                BA = estadosCount[i].count;
+                                console.log(BA + ' BA testando')
+                            }
+                            if (estadosCount[i]._id.uf == 'CE') {
+                                CE = estadosCount[i].count;
+                                console.log(CE + ' CE testando')
+                            }
+                            if (estadosCount[i]._id.uf == 'DF') {
+                                DF = estadosCount[i].count;
+                                console.log(DF + ' DF testando')
+                            }
+                            if (estadosCount[i]._id.uf == 'ES') {
+                                ES = estadosCount[i].count;
+                                console.log(ES + ' ES testando')
+                            }
+                            if (estadosCount[i]._id.uf == 'GO') {
+                                GO = estadosCount[i].count;
+                                console.log(GO + ' GO testando')
+                            }
+                            if (estadosCount[i]._id.uf == 'MA') {
+                                MA = estadosCount[i].count;
+                                console.log(MA + ' MA testando')
+                            }
+                            if (estadosCount[i]._id.uf == 'MT') {
+                                MT = estadosCount[i].count;
+                                console.log(MT + ' MT testando')
+                            }
+                            if (estadosCount[i]._id.uf == 'MS') {
+                                MS = estadosCount[i].count;
+                                console.log(MS + ' MS testando')
+                            }
+                            if (estadosCount[i]._id.uf == 'MG') {
+                                MG = estadosCount[i].count;
+                                console.log(MG + ' MG testando')
+                            }
+                            if (estadosCount[i]._id.uf == 'PA') {
+                                PA = estadosCount[i].count;
+                                console.log(PA + ' PA testando')
+                            }
+                            if (estadosCount[i]._id.uf == 'PB') {
+                                PB = estadosCount[i].count;
+                                console.log(PB + ' PB testando')
+                            }
+                            if (estadosCount[i]._id.uf == 'PR') {
+                                PR = estadosCount[i].count;
+                                console.log(AL + ' PR testando')
+                            }
+                            if (estadosCount[i]._id.uf == 'PE') {
+                                PE = estadosCount[i].count;
+                                console.log(PE + ' PE testando')
+                            }
+                            if (estadosCount[i]._id.uf == 'PI') {
+                                PI = estadosCount[i].count;
+                                console.log(PI + ' PI testando')
+                            }
+                            if (estadosCount[i]._id.uf == 'RJ') {
+                                RJ = estadosCount[i].count;
+                                console.log(RJ + ' RJ testando')
+                            }
+                            if (estadosCount[i]._id.uf == 'RN') {
+                                RN = estadosCount[i].count;
+                                console.log(RN + ' RN testando')
+                            }
+                            if (estadosCount[i]._id.uf == 'RS') {
+                                RS = estadosCount[i].count;
+                                console.log(RS + ' RS testando')
+                            }
+                            if (estadosCount[i]._id.uf == 'RO') {
+                                RO = estadosCount[i].count;
+                                console.log(RO + ' RO testando')
+                            }
+                            if (estadosCount[i]._id.uf == 'RR') {
+                                RR = estadosCount[i].count;
+                                console.log(RR + ' RR testando')
+                            }
+                            if (estadosCount[i]._id.uf == 'SC') {
+                                SC = estadosCount[i].count;
+                                console.log(SC + ' SC testando')
+                            }
+                            if (estadosCount[i]._id.uf == 'SP') {
+                                SP = estadosCount[i].count;
+                                console.log(SP + ' SP testando')
+                            }
+                            if (estadosCount[i]._id.uf == 'SE') {
+                                SE = estadosCount[i].count;
+                                console.log(SE + ' SE testando')
+                            }
+                            if (estadosCount[i]._id.uf == 'TO') {
+                                TO = estadosCount[i].count;
+                                console.log(TO + ' TO testando')
+                            }
+                        }
+                        let obj = [AC, AL, AP, AM, BA, CE, DF, ES, GO, MA, MT, MS, MG, PA,
+                            PB, PR, PE, PI, RJ, RN, RS, RO, RR, SC, SP, SE, TO];
                         
-                        //if (teste == true) {                       
-                        //    MG = teste.count
-                        //    console.log('entre no true')
-                        //};
-
-                        // if (estadosCount.filter(function (obj) {
-                        //    return obj._id.uf == 'MG';
-                        //}) == true) {
-                        //    AC = estadosCount[21].count;
-                        //    console.log(AC + ' AC testando');
-                        //} else {
-                        //    console.log(estadosCount[21]._id.uf)
-                        //    AC = 0;
-                        //}
-                        //if (estadosCount[17]._id.uf == 'AL') {
-                        //    AL = estadosCount[17].count;
-                        //    console.log(AL + ' AL testando')
-                        //} else {
-                        //    console.log(estadosCount[17]._id.uf)
-                        //    AL = 0;
-                        //}
-                        //if (estadosCount[16]._id.uf == 'AP') {
-                        //    AP = estadosCount[16].count;
-                        //    console.log(AP + ' AP testando')
-                        //} else {
-                        //    AP = 0;
-                        //}
-                        //if (estadosCount[9]._id.uf == 'AM') {
-                        //    AM = estadosCount[9].count;
-                        //    console.log(AL + ' AM testando')
-                        //} else {
-                        //    AM = 0;
-                        //}
-                        //if (estadosCount[8]._id.uf == 'BA') {
-                        //    BA = estadosCount[8].count;
-                        //    console.log(BA + ' BA testando')
-                        //} else {
-                        //    BA = 0;
-                        //}
-                        //if (estadosCount[7]._id.uf == 'CE') {
-                        //    CE = estadosCount[7].count;
-                        //    console.log(AL + ' CE testando')
-                        //}
-                        //if (estadosCount[6]._id.uf == 'DF') {
-                        //    DF = estadosCount[6].count;
-                        //    console.log(DF + ' DF testando')
-                        //}
-                        //if (estadosCount[14]._id.uf == 'ES') {
-                        //    ES = estadosCount[14].count;
-                        //    console.log(ES + ' ES testando')
-                        //}
-                        if (estadosCount[4]._id.uf == 'GO') {
-                            console.log(estadosCount[4]._id.uf)
-                            GO = estadosCount[4].count;
-                            console.log(GO + ' GO testando')
-                        }
-                        //if (estadosCount[13]._id.uf == 'MA') {
-                        //    MA = estadosCount[13].count;
-                        //    console.log(MA + ' MA testando')
-                        //}
-                        //if (estadosCount[19]._id.uf == 'MT') {
-                        //    MT = estadosCount[19].count;
-                        //    console.log(MT + ' MT testando')
-                        //}
-                        //if (estadosCount[20]._id.uf == 'MS') {
-                        //    MS = estadosCount[20].count;
-                        //    console.log(MS + ' MS testando')
-                        //}
-                        if (estadosCount[6]._id.uf == 'MG') {
-                            MG = estadosCount[6].count;
-                            console.log(MG + ' MG testando')
-                        }
-                        //if (estadosCount[18]._id.uf == 'PA') {
-                        //    PA = estadosCount[18].count;
-                        //    console.log(PA + ' PA testando')
-                        //}
-                        //if (estadosCount[20]._id.uf == 'PB') {
-                        //    PB = estadosCount[20].count;
-                        //    console.log(PB + ' PB testando')
-                        //}
-                        //if (estadosCount[15]._id.uf == 'PR') {
-                        //    PR = estadosCount[15].count;
-                        //    console.log(AL + ' PR testando')
-                        //}
-                        //if (estadosCount[25]._id.uf == 'PE') {
-                        //    PE = estadosCount[25].count;
-                        //    console.log(PE + ' PE testando')
-                        //}
-                        //if (estadosCount[24]._id.uf == 'PI') {
-                        //    PI = estadosCount[24].count;
-                        //    console.log(PI + ' PI testando')
-                        //}
-                        //if (estadosCount[11]._id.uf == 'RJ') {
-                        //    RJ = estadosCount[11].count;
-                        //    console.log(RJ + ' RJ testando')
-                        //}
-                        //if (estadosCount[26]._id.uf == 'RN') {
-                        //    RN = estadosCount[26].count;
-                        //    console.log(RN + ' RN testando')
-                        //}
-                        //if (estadosCount[12]._id.uf == 'RS') {
-                        //    RS = estadosCount[12].count;
-                        //    console.log(RS + ' RS testando')
-                        //}
-                        //if (estadosCount[23]._id.uf == 'RO') {
-                        //    RO = estadosCount[23].count;
-                        //    console.log(RO + ' RO testando')
-                        //}
-                        //if (estadosCount[5]._id.uf == 'RR') {
-                        //    RR = estadosCount[5].count;
-                        //    console.log(RR + ' RR testando')
-                        //}
-                        //if (estadosCount[2]._id.uf == 'SC') {
-                        //    SC = estadosCount[2].count;
-                        //    console.log(SC + ' SC testando')
-                        //}
-                        if (estadosCount[1]._id.uf == 'SP') {
-                            SP = estadosCount[1].count;
-                            console.log(SP + ' SP testando')
-                        }
-                        if (estadosCount[0]._id.uf == 'SE') {
-                            SE = estadosCount[0].count;
-                            console.log(SE + ' SE testando')
-                        }
-                        //if (estadosCount[4]._id.uf == 'TO') {
-                        //    TO = estadosCount[4].count;
-                        //    console.log(TO + ' TO testando')
-                        //}
-
-                        obj.push(
-                            AC, AL, AP, AM, BA, CE, DF, ES, GO, MA, MT, MS, MG, PA,
-                            PB, PR, PE, PI, RJ, RN, RS, RO, RR, SC, SP, SE, TO
-                        )
-
                         //Graficio Artesão
                         var ctx = document.getElementById("artesaoGBarUF");
                         //var obj = [count1.count, 5,12,5,9,8,2,3,9,11,4,12,19,20,4,22,21,20,14,5,12,15,16,11,14,15,21];
