@@ -1934,29 +1934,33 @@ window.onload = () => {
 };
 
 window.onload = () => {
-	const listRt = document.querySelector('#listArtEstado');
-	listReport();
+	const listRt = document.querySelector('#tabelaReport');
+	tableReport();
 };
 
-function templateListReport(id, nome, uf) {
+function templateTableReport(id, nome, uf, email) {
 	return `
-			<li class="list-group-item"><b>${nome} ${uf}</b>
-	
-			</li>
-            `;
+	<tbody>
+	<tr>
+		<th scope="row">1</th>
+		<td>${nome}</td>
+		<td>${email}</td>
+		<td>${uf}</td>
+	</tr>
+</tbody> `;
 }
-function listReport(){
-	listArtEstado.innerHTML = '';
+function tableReport() {
+	tabelaReport.innerHTML = '';
 	axios.get('/artesao')
-	.then((response) => {
-		console.log(response);
-		response.data.forEach(element => {
-			listArtEstado.innerHTML += templateListReport(element._id, element.nome, element.uf);
+		.then((response) => {
+			console.log(response);
+			response.data.forEach(element => {
+				tabelaReport.innerHTML += templateTableReport(element._id, element.nome, element.uf, element.emailArtesao);
+			});
+		})
+		.catch((error) => {
+			console.log(error);
 		});
-	})
-	.catch((error) => {
-		console.log(error);
-	});
 }
 /*
  ######################## Criação do Templete da lista* ########################*/
