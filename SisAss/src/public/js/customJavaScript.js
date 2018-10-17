@@ -1939,13 +1939,14 @@ function loadListRep() {
 	tableReport();
 };
 
-function templateTableReport(id, nome, uf, email, cont) {
+function templateTableReport(id, cidade, nome, uf, email, cont) {
 	return `
 	<tbody>
 	<tr>
 		<th scope="row">${cont}</th>
 		<td>${nome}</td>
 		<td>${email}</td>
+		<td>${cidade}</td>
 		<td>${uf}</td>
 	</tr>
 </tbody> `;
@@ -1958,7 +1959,7 @@ function tableReport() {
 			let cont = 0;
 			response.data.forEach(element => {
 				cont++;
-				tabelaReport.innerHTML += templateTableReport(element._id, element.nome, element.uf, element.emailArtesao, cont);
+				tabelaReport.innerHTML += templateTableReport(element._id, element.cidade, element.nome, element.uf, element.emailArtesao, cont);
 			});
 		})
 		.catch((error) => {
@@ -1987,7 +1988,7 @@ function templateLi(id, nome) {
 function read() {
 	lista.innerHTML = '';
 	//Chamada ajax para o servidor na rota /artesaos (Biblioteca Axios)
-	axios.get('/artesao')
+	axios.get('/artesao/artAlfabetica')
 		.then((response) => {
 			console.log(response);
 			response.data.forEach(element => {
