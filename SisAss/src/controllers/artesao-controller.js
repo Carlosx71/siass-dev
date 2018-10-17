@@ -12,6 +12,23 @@ exports.get = (req, res, next) => {
         });
 };
 
+exports.artAlfabetica = (req, res, next) => {
+    Artesao.find().sort({nome: 'asc'})
+        .then(data => {
+            res.status(200).send(data);
+        }).catch(e => {
+            res.status(400).send(e);
+        });
+};
+
+exports.artAlfabeEst = (req, res, next) => {
+    Artesao.find().sort({uf: 'asc'})
+        .then(data => {
+            res.status(200).send(data);
+        }).catch(e => {
+            res.status(400).send(e);
+        });
+};
 
 exports.cadasSucess = (req, res, next) => {
 

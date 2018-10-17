@@ -34,7 +34,7 @@
         crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body onload="loadListRep()">
     <header>
         <!--Inicio do navbar-->
         <nav class="navbar navbar-expand-lg navbar-light bg-dark">
@@ -444,6 +444,9 @@
             </div>
             <div class="form-row">
                 <div class="col-md-12 mb-3">
+                    <script>
+                        window.onload
+                    </script>
                     <table class="table table-sm" id="tabelaReport">
                         <thead>
                             <tr>

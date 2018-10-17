@@ -5,6 +5,8 @@ const controller = require('../controllers/artesao-controller');
 router.post('/',controller.post);
 router.post('/:id',controller.update);
 router.get('/countMG',controller.countMG);
+router.get('/artAlfabetica',controller.artAlfabetica);
+router.get('/artAlfabeEst',controller.artAlfabeEst);
 //router.delete('/',controller.delete);
 router.get('/:id', controller.getById);
 router.delete('/:id', controller.delete);

@@ -1931,18 +1931,19 @@ window.onload = () => {
 	listaArtesao.addEventListener('click', del);
 	listaArtesao.addEventListener('click', getArtesao);
 	read();
+	
 };
 
-window.onload = () => {
+function loadListRep() {
 	const listRt = document.querySelector('#tabelaReport');
 	tableReport();
 };
 
-function templateTableReport(id, nome, uf, email) {
+function templateTableReport(id, nome, uf, email, cont) {
 	return `
 	<tbody>
 	<tr>
-		<th scope="row">1</th>
+		<th scope="row">${cont}</th>
 		<td>${nome}</td>
 		<td>${email}</td>
 		<td>${uf}</td>
@@ -1951,11 +1952,13 @@ function templateTableReport(id, nome, uf, email) {
 }
 function tableReport() {
 	tabelaReport.innerHTML = '';
-	axios.get('/artesao')
+	axios.get('/artesao/artAlfabeEst')
 		.then((response) => {
 			console.log(response);
+			let cont = 0;
 			response.data.forEach(element => {
-				tabelaReport.innerHTML += templateTableReport(element._id, element.nome, element.uf, element.emailArtesao);
+				cont++;
+				tabelaReport.innerHTML += templateTableReport(element._id, element.nome, element.uf, element.emailArtesao, cont);
 			});
 		})
 		.catch((error) => {
