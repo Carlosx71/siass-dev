@@ -1941,15 +1941,14 @@ function loadListRep() {
 
 function templateTableReport(id, cidade, nome, uf, email, cont) {
 	return `
-	<tbody>
+	
 	<tr>
 		<th scope="row">${cont}</th>
 		<td>${nome}</td>
 		<td>${email}</td>
 		<td>${cidade}</td>
 		<td>${uf}</td>
-	</tr>
-</tbody> `;
+	</tr> `;
 }
 function tableReport() {
 	tabelaReport.innerHTML = '';
