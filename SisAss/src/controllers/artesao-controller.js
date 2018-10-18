@@ -1,7 +1,22 @@
 //Importando a model
 const mongoose = require('mongoose');
 const Artesao = mongoose.model('Artesao');
+//const mongoosePaginate = require('mongoose-paginate');
+//const mongoosePagination = require('mongoose-pagination');
 const path = require('path');
+
+exports.index = (req, res) => {
+    Artesao.paginate({}, { page: 2, limit: 10 }, (err, result) => {
+        //console.log(result);
+        res.status(200).send(result);
+      });
+}
+
+exports.pagination = (req, res, next) => {
+    Artesao.find({ skip: 10, limit: 5 }, (err, results) => {
+        console.log(results);
+    });
+}
 
 exports.get = (req, res, next) => {
     Artesao.find()
@@ -13,7 +28,7 @@ exports.get = (req, res, next) => {
 };
 
 exports.artAlfabetica = (req, res, next) => {
-    Artesao.find().sort({nome: 'asc'})
+    Artesao.find().sort({ nome: 'asc' })
         .then(data => {
             res.status(200).send(data);
         }).catch(e => {
@@ -22,7 +37,7 @@ exports.artAlfabetica = (req, res, next) => {
 };
 
 exports.artAlfabeEst = (req, res, next) => {
-    Artesao.find().sort({uf: 'asc'})
+    Artesao.find().sort({ uf: 'asc' })
         .then(data => {
             res.status(200).send(data);
         }).catch(e => {
@@ -37,7 +52,7 @@ exports.cadasSucess = (req, res, next) => {
 
 exports.countMG = (req, res, next) => {
     Artesao.aggregate([
-        {$group: {_id: {uf: '$uf'}, count: {$sum: 1} }}], (err, count) => {
+        { $group: { _id: { uf: '$uf' }, count: { $sum: 1 } } }], (err, count) => {
             res.status(200).json(count);
             //console.log("Number of sexo masc:", count);
         });

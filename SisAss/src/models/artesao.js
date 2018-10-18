@@ -1,8 +1,9 @@
 'use strict';
-
+const mongoosePaginate = require('mongoose-paginate');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+//const teste = mongoose.Schema({})
 const schema = new Schema({
     nome:{
         type: String,
@@ -74,6 +75,7 @@ const schema = new Schema({
         default: true
     }
 });
-
+schema.plugin(mongoosePaginate);
+const Model = mongoose.model('Model',  schema)
 //Exportando o schema de artesão
 module.exports = mongoose.model('Artesao', schema);

@@ -7,6 +7,8 @@ router.post('/:id',controller.update);
 router.get('/countMG',controller.countMG);
 router.get('/artAlfabetica',controller.artAlfabetica);
 router.get('/artAlfabeEst',controller.artAlfabeEst);
+router.get('/pagination', controller.pagination);
+router.get('/index',controller.index);
 //router.delete('/',controller.delete);
 router.get('/:id', controller.getById);
 router.delete('/:id', controller.delete);
