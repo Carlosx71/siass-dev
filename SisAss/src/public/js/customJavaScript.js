@@ -1928,17 +1928,38 @@ dgCidadesEstados.prototype = {
 //Garanti que a função sera carregada
 window.onload = () => {
 	const listaArtesao = document.querySelector('#lista');
+	const paginacao = document.querySelector('#paginacao');
 	listaArtesao.addEventListener('click', del);
 	listaArtesao.addEventListener('click', getArtesao);
 	read();
-	
-};
+	liPagination();
 
-function loadListRep() {
-	const listRt = document.querySelector('#tabelaReport');
-	tableReport();
 };
-
+/*######################## TTemplate da paginação * ########################*/
+function templatePagination(cont) {
+	return `
+	<li class="page-item"><a class="page-link" href="http://localhost/artesao/pagination/${cont}">${cont}</a>
+	</li>
+	`
+}
+function liPagination() {
+	paginacao.innerHTML = '';
+	let cont = 1;
+	axios.get(`artesao/pagination/${count}`)
+		.then((response) => {
+			console.log('entrei no liPagination')
+			console.log(response);
+			response.data.forEach(element => {
+				cont++;
+				paginacao.innerHTML += templatePagination(cont);
+			});
+		})
+		.catch((error) => {
+			console.log('Errao bravo')
+			console.log(error);
+		});
+}
+/*######################## TTemplate da tabela dinâmica * ########################*/
 function templateTableReport(id, cidade, nome, uf, email, cont) {
 	return `
 	
@@ -1950,6 +1971,8 @@ function templateTableReport(id, cidade, nome, uf, email, cont) {
 		<td>${uf}</td>
 	</tr> `;
 }
+
+/* ######################## Início da criação da tabela dinâmica * ########################*/
 function tableReport() {
 	tabelaReport.innerHTML = '';
 	axios.get('/artesao/artAlfabeEst')

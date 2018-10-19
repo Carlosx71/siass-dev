@@ -5,18 +5,53 @@ const Artesao = mongoose.model('Artesao');
 //const mongoosePagination = require('mongoose-pagination');
 const path = require('path');
 
-exports.index = (req, res) => {
-    Artesao.paginate({}, { page: 2, limit: 10 }, (err, result) => {
-        //console.log(result);
+exports.pagination = (req, res) => {
+    const pageRE = req.params.page;
+    const page = parseInt(pageRE);
+    Artesao.paginate({}, { page: page, limit: 10 }, (err, result) => {
+        //console.log(req);
         res.status(200).send(result);
-      });
-}
-
-exports.pagination = (req, res, next) => {
-    Artesao.find({ skip: 10, limit: 5 }, (err, results) => {
-        console.log(results);
     });
 }
+
+//exports.update = (req, res, next) => {
+//    Artesao
+//        .findByIdAndUpdate(req.params.id, {
+//            //$set seta o que veio da requisao
+//            $set: {
+//                nome: req.body.nome,
+//                dataDeNascimento: req.body.dataDeNascimento,
+//                sexo: req.body.sexo,
+//                naturalidadeUF: req.body.naturalidadeUF,
+//                naturalidadeMU: req.body.naturalidadeMU,
+//                numRG: req.body.numRG,
+//                cepArtesao: req.body.cepArtesao,
+//                rua: req.body.rua,
+//                numeroEnd: req.body.numeroEnd,
+//                complemento: req.body.complemento,
+//                bairro: req.body.bairro,
+//                cidade: req.body.cidade,
+//                uf: req.body.uf,
+//                emailArtesao: req.body.emailArtesao,
+//                celular: req.body.celular,
+//                telefone: req.body.telefone
+//            }
+//        }).then(x => {
+//            //res.path.resolve();
+//            res.redirect('http://localhost/cadastroSucessoArtesao.html');
+//            //res.status(201).send({                message: 'Artesao atualizado com sucesso'            });
+//        }).catch(e => {
+//            res.status(400).send({
+//                message: 'Falha ao atualizar artesao',
+//                data: e
+//            });
+//        });
+//};
+//exports.pagination = (req, res, next) => {
+//    Artesao.find({ skip: 10, limit: 5 }, (err, results) => {
+//        console.log(results);
+//    });
+//}
 
 exports.get = (req, res, next) => {
     Artesao.find()
