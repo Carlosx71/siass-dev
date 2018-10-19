@@ -69,11 +69,16 @@ const schema = new Schema({
         type: Number,
         required: true
     },
+    dataCriacao: {
+        type: Date,
+        default: Date.now
+    },
     active: {
         type: Boolean,
         required: true,
         default: true
     }
+
 });
 schema.plugin(mongoosePaginate);
 const Model = mongoose.model('Model',  schema)

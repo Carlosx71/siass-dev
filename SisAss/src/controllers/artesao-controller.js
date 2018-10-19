@@ -10,48 +10,14 @@ exports.pagination = (req, res) => {
     const page = parseInt(pageRE);
     Artesao.paginate({}, { page: page, limit: 10 }, (err, result) => {
         //console.log(req);
-        res.status(200).send(result);
+        if (page > result.pages) {
+            res.status(200).send({ message: 'A pagina passou o limite' })
+        } else {
+            res.status(200).send(result);
+        }
+
     });
 }
-
-//exports.update = (req, res, next) => {
-//    Artesao
-//        .findByIdAndUpdate(req.params.id, {
-//            //$set seta o que veio da requisao
-//            $set: {
-//                nome: req.body.nome,
-//                dataDeNascimento: req.body.dataDeNascimento,
-//                sexo: req.body.sexo,
-//                naturalidadeUF: req.body.naturalidadeUF,
-//                naturalidadeMU: req.body.naturalidadeMU,
-//                numRG: req.body.numRG,
-//                cepArtesao: req.body.cepArtesao,
-//                rua: req.body.rua,
-//                numeroEnd: req.body.numeroEnd,
-//                complemento: req.body.complemento,
-//                bairro: req.body.bairro,
-//                cidade: req.body.cidade,
-//                uf: req.body.uf,
-//                emailArtesao: req.body.emailArtesao,
-//                celular: req.body.celular,
-//                telefone: req.body.telefone
-//            }
-//        }).then(x => {
-//            //res.path.resolve();
-//            res.redirect('http://localhost/cadastroSucessoArtesao.html');
-//            //res.status(201).send({                message: 'Artesao atualizado com sucesso'            });
-//        }).catch(e => {
-//            res.status(400).send({
-//                message: 'Falha ao atualizar artesao',
-//                data: e
-//            });
-//        });
-//};
-//exports.pagination = (req, res, next) => {
-//    Artesao.find({ skip: 10, limit: 5 }, (err, results) => {
-//        console.log(results);
-//    });
-//}
 
 exports.get = (req, res, next) => {
     Artesao.find()
@@ -89,7 +55,6 @@ exports.countMG = (req, res, next) => {
     Artesao.aggregate([
         { $group: { _id: { uf: '$uf' }, count: { $sum: 1 } } }], (err, count) => {
             res.status(200).json(count);
-            //console.log("Number of sexo masc:", count);
         });
 };
 
@@ -109,11 +74,10 @@ exports.post = (req, res, next) => {
     artesao
         .save() //Usado para salvar no mongoodb
         .then(x => {
-            res.status(201).send({ message: 'Artesão cadastrado com sucesso' });
+            res.redirect('http://localhost/cadastroSucessoArtesao.html');
         }).catch(e => {
             res.status(400).send({ message: 'Falha ao cadastrar o artesão', data: e });
         });
-
 };
 
 //movido na aula 12
@@ -148,8 +112,7 @@ exports.update = (req, res, next) => {
                 telefone: req.body.telefone
             }
         }).then(x => {
-            //res.path.resolve();
-            res.redirect('http://localhost/cadastroSucessoArtesao.html');
+            res.redirect('http://localhost/editSucessoArtesao.html');
             //res.status(201).send({                message: 'Artesao atualizado com sucesso'            });
         }).catch(e => {
             res.status(400).send({
@@ -236,5 +199,4 @@ exports.delete = (req, res, next) => {
                 data: e
             });
         });
-
 };
