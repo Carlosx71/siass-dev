@@ -85,6 +85,10 @@
                                 Produtos
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="produtosCadastrados.html">
+                                    <i class="fas fa-list-ul"></i>
+                                    Produtos Cadastrados
+                                </a>
                                 <a class="dropdown-item" href="cadastroProduto.html">
                                     <i class="fas fa-box-open"></i>
                                     Cadastrar Produto
@@ -195,7 +199,7 @@
                             //var count = estadosCount[i].count;
                             //var obje = {'estado': estado, 'count': count};
                             //dados.push(obje);
-                            
+
                             if (estadosCount[i]._id.uf == 'AC') {
                                 AC = estadosCount[i].count
                                 console.log(AC + ' AC testando');
@@ -321,7 +325,7 @@
                         //dados.sort(estado);
                         let obj = [AC, AL, AP, AM, BA, CE, DF, ES, GO, MA, MT, MS, MG, PA,
                             PB, PR, PE, PI, RJ, RN, RS, RO, RR, SC, SP, SE, TO];
-                        
+
                         //Graficio Artesão
                         var ctx = document.getElementById("artesaoGBarUF");
                         //var obj = [count1.count, 5,12,5,9,8,2,3,9,11,4,12,19,20,4,22,21,20,14,5,12,15,16,11,14,15,21];

@@ -1935,7 +1935,41 @@ window.onload = () => {
 	liPagination();
 
 };
-/*######################## TTemplate da paginação * ########################*/
+/*######################## inícia na pagina de produtos cadastrados ########################*/
+function prodCadas(){
+	const listaProd = document.querySelector('#listaProd');
+	liProd();
+}
+/*######################## Criação lista de produtos ########################*/
+function liProd() {
+	listaProd.innerHTML = '';
+	//Chamada ajax para o servidor na rota /products (Biblioteca Axios)
+	axios.get('/products')
+		.then((response) => {
+			console.log(response);
+			response.data.forEach(element => {
+				listaProd.innerHTML += templateLiProd(element._id, element.product);
+			});
+		})
+		.catch((error) => {
+			console.log(error);
+		});
+}
+function templateLiProd(id, product) {
+	return `
+			<li class="list-group-item"><b>${product}</b>
+				<div class="editDelete">
+                <button type="button" class="btn btn-danger delete" data-id="${id}">
+                    <i class="fa fa-trash delete" data-id="${id}"></i>
+				</button>
+                <button type="button" class="btn btn-danger update" data-id="${id}" style="background-color: blue">
+                    <i class="fa fa-wrench update" data-id="${id}"></i>
+				</button>
+				</div>				
+			</li>
+            `;
+}
+/*######################## Template da paginação * ########################*/
 function templatePagination(cont) {
 	return `
 	<li class="page-item"><a class="page-link" href="http://localhost/artesao/pagination/${cont}">${cont}</a>
