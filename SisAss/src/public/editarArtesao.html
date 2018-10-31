@@ -24,7 +24,7 @@
 	<title>SiAss</title>
 </head>
 
-<body>
+<body onload="createJsonArtesao()">
 	<header>
 		<!--Inicio do navbar-->
 		<nav class="navbar navbar-expand-lg navbar-light bg-dark">
@@ -135,11 +135,6 @@
 
 	<div class="container">
 		<div class="containerBody">
-			<script type="text/javascript">
-				window.onload = function () {
-					escrever(artesaoJson);
-				}
-			</script>
 			<h2>Editar Artesão</h2>
 			<hr>
 			<h4>Dados Pessoas</h4>
@@ -265,8 +260,6 @@
 					<div class="col-md-3 offset-md-10"><button class="btn btn-primary" type="submit"><i class="far fa-save colorFas"></i>
 							Salvar</button></div>
 				</div>
-
-
 			</form>
 		</div>
 	</div>
@@ -274,7 +267,7 @@
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script>
-		document.getElementById('frmAction').action = 'artesao/' + id;	
+		document.getElementById('frmAction').action = 'artesao/' + id;
 	</script>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 	 crossorigin="anonymous "></script>

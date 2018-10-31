@@ -83,3 +83,50 @@ exports.getByTag = (req, res, next) => {
 exports.delete = (req, res, next) => {
     res.status(200).send(req.body);
 };
+
+//Editar artesão
+exports.update = (req, res, next) => {
+    Product
+        .findByIdAndUpdate(req.params.id, {
+            //$set seta o que veio da requisao
+            $set: {
+                product: req.body.product,
+                materiaPrima: req.body.materiaPrima,
+                peso: req.body.peso,
+                artesao: req.body.artesao,
+                description: req.body.description,
+                dimensao: req.body.dimensao,
+                materiaPrima: req.body.materiaPrima,
+                peso: req.body.peso,
+                preco: req.body.preco,
+                quantidade: req.body.quantidade,
+                segmento: req.body.segmento
+            }
+        }).then(x => {
+            res.redirect('http://localhost/editSucessoProduto.html');
+        }).catch(e => {
+            res.status(400).send({
+                message: 'Falha ao atualizar Produto',
+                data: e
+            });
+        });
+};
+
+//Rota de delete
+exports.delete = (req, res, next) => {
+    const { id } = req.params;
+    Product
+        .deleteOne({
+            _id: id
+        })
+        .then(x => {
+            res.status(200).send({
+                message: 'Produto excluído com sucesso'
+            });
+        }).catch(e => {
+            res.status(400).send({
+                message: 'Falha ao excluir produto',
+                data: e
+            });
+        });
+};

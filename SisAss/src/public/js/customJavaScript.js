@@ -1926,18 +1926,20 @@ dgCidadesEstados.prototype = {
  */
 
 //Garanti que a função sera carregada
-window.onload = () => {
+function artCadas() {
 	const listaArtesao = document.querySelector('#lista');
 	const paginacao = document.querySelector('#paginacao');
-	listaArtesao.addEventListener('click', del);
+	listaArtesao.addEventListener('click', delArtesao);
 	listaArtesao.addEventListener('click', getArtesao);
 	read();
-	liPagination();
+	//liPagination();
 
 };
 /*######################## inícia na pagina de produtos cadastrados ########################*/
 function prodCadas(){
 	const listaProd = document.querySelector('#listaProd');
+	listaProd.addEventListener('click', delProd);
+	listaProd.addEventListener('click', getProducao);
 	liProd();
 }
 /*######################## Criação lista de produtos ########################*/
@@ -1954,7 +1956,25 @@ function liProd() {
 		.catch((error) => {
 			console.log(error);
 		});
-}
+};
+function getProducao(element) {
+	if (element.target.classList.contains('update')) {
+
+		const id = element.target.dataset.id;
+		console.log(id + ' esse ai que e o ID do produto, manolo ');
+		axios.get(`products/${id}`)
+			.then((response) => {
+
+				console.log('entrei no response');
+
+				redirectEditProd(id);
+			})
+			.catch((error) => {
+				console.log('deu merda mano');
+				console.log(error);
+			});
+	};
+};
 function templateLiProd(id, product) {
 	return `
 			<li class="list-group-item"><b>${product}</b>
@@ -2061,12 +2081,11 @@ function read() {
 /*
  ######################## Início da operação de delete * ########################*/
 //Passa element como paramento para buscar a classe "delete"
-function del(element) {
+function delArtesao(element) {
 	console.log(element);
 	//Verifica se existe a classe "delete"
 	if (element.target.classList.contains('delete')) {
 		//Busca o id que estao no atributo data-id
-
 		resultConfirm = confirm('Tem certeza que deseja excluir?');
 		if (resultConfirm == true) {
 			const id = element.target.dataset.id;
@@ -2077,6 +2096,31 @@ function del(element) {
 						//busca o filho na propriedade path e exclui (no caso a li)
 						lista.removeChild(element.path[1]);
 
+					}
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+		};
+		location.reload();
+	};
+
+};
+
+function delProd(element) {
+	console.log(element);
+	//Verifica se existe a classe "delete"
+	if (element.target.classList.contains('delete')) {
+		//Busca o id que estao no atributo data-id
+		resultConfirm = confirm('Tem certeza que deseja excluir?');
+		if (resultConfirm == true) {
+			const id = element.target.dataset.id;
+			axios.delete(`products/${id}`)
+				.then(function (response) {
+					console.log(response);
+					if (response.status = 200) {
+						//busca o filho na propriedade path e exclui (no caso a li)
+						lista.removeChild(element.path[1]);
 					}
 				})
 				.catch(function (error) {
@@ -2106,45 +2150,51 @@ function getArtesao(element) {
 				console.log('deu merda mano');
 				console.log(error);
 			});
-
 	};
-
-
 };
 
 function redirect(id) {
 	window.location = "../editarArtesao.html?id=" + id;
 };
 
+function redirectEditProd(id) {  
+	window.location = "../editarProdutos.html?id=" + id;
+};
 
 /*######################## Preenchimento do fomulario ########################*/
 //Busca o id da pagina anterior
 
-
-
 //let artesaoJson = JSON.parse(testeServer());
 let queryString = window.location.search;
 let id = queryString.split('=')[1];
-console.log(id + ' tô na pagina do artesão');
-let urlID = "http://localhost/artesao/";
-let artesaoJson = JSON.parse(server(urlID));
-console.log(artesaoJson)
+
+//Chamado na tela de edição do Artesão
+function createJsonArtesao(){
+	console.log('entrei no create do artesao')
+	let urlID = "http://localhost/artesao/";
+	let artesaoJson = JSON.parse(server(urlID));
+	escreverArt(artesaoJson);
+};
+
+//Chamado na tela de edição do Produto
+function createJsonProduct(){
+	let urlProd = "http://localhost/products/";
+	let productJson = JSON.parse(server(urlProd));
+	escreverProd(productJson);
+}
 
 //Traz os arquivo do servidor
 function server(url) {
-	console.log(urlID);
 	var http;
 	var return__;
 	try {
 		http = new XMLHttpRequest();
-		console.log(http);
 		//Inicializando uma requisição
 		http.open("GET", url + id, false);
 		http.onreadystatechange = function (e) {
 			if (http.readyState === 4) {
 				if (http.status === 200) {
 					return__ = http.responseText;
-					console.log(return__);
 				} else {
 					console.log('error: ' + http.statusText);
 				}
@@ -2158,8 +2208,7 @@ function server(url) {
 	}
 }
 
-//console.log(artesaoJson);
-function escrever(conteudo) {
+function escreverArt(conteudo) {
 	console.log(conteudo);
 	document.getElementById('nome').value = (conteudo.nome);
 	document.getElementById('dataDeNascimento').value = (conteudo.dataDeNascimento);
@@ -2182,12 +2231,22 @@ function escrever(conteudo) {
 	document.getElementById('celular').value = (conteudo.celular);
 	document.getElementById('telefone').value = (conteudo.telefone);
 }
-/*######################## Fim do preenchimento ########################*/
+
+function escreverProd(conteudo) {
+	console.log(conteudo);
+	document.getElementById('edProduct').value = (conteudo.product);
+	document.getElementById('edMateriaPrima').value = (conteudo.materiaPrima);
+	document.getElementById('edPeso').value = (conteudo.peso);
+	document.getElementById('edDimensao').value = (conteudo.dimensao);
+	document.getElementById('edSegmento').value = (conteudo.segmento);
+	document.getElementById('edPreco').value = (conteudo.preco);
+	document.getElementById('edDescription').value = (conteudo.description);
+	document.getElementById('edArtesao').value = (conteudo.artesao);
+	document.getElementById('edQuantidade').value = (conteudo.quantidade);
+}
 
 /*################ Redireciona para Cadastrar Artesão ##################*/
-
 function cadasArt() {
 
 	window.location = "cadastroArtesao.html";
 }
-/*################ Fim Redireciona para Cadastrar Artesão##################*/

@@ -5,7 +5,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <!--  Carrega Scripts principais -->
+    <script src="js/customJavaScript.js"></script>
     <!--Icones Awsome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
         crossorigin="anonymous">
@@ -19,7 +20,7 @@
     <title>SiAss</title>
 </head>
 
-<body>
+<body onload="createJsonProduct()">
     <header>
         <!--Inicio do navbar-->
         <nav class="navbar navbar-expand-lg navbar-light bg-dark">
@@ -134,7 +135,7 @@
             <h2>Cadastro de Produto</h2>
             <hr>
 
-            <form class="needs-validation" action="/products" method="POST">
+            <form class="needs-validation" method="POST" id="frmAction">
                 <div class="form-row">
                     <div class="col-md-4 mb-3">
                         <label for="product">Nome do Produto</label>
@@ -208,12 +209,17 @@
                     </div>
 
                 </div>
-                <button class="btn btn-primary" type="submit">Salvar</button>
+                <div class="row">
+                    <div class="col-md-3 offset-md-10"><button class="btn btn-primary" type="submit"><i class="far fa-save colorFas"></i>
+                            Salvar</button>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script> document.getElementById('frmAction').action = 'products/' + id;</script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"

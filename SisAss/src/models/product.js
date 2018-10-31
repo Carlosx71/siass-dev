@@ -48,15 +48,15 @@ const schema = new Schema({
         type: Number,
         required: true
     },
+    artesao: {
+        type: String,
+        required: true
+    },
     active: {
         type: Boolean,
         required: true,
         default: true
-    },
-    tags: [{ // tags é um array
-        type: String,
-        required: true
-    }]
+    }
 });
 
 //Exportando o schema aula 15
