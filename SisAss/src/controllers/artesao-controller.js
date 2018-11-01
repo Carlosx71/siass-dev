@@ -17,7 +17,7 @@ exports.pagination = (req, res) => {
         }
 
     });
-}
+};
 
 exports.get = (req, res, next) => {
     Artesao.find()

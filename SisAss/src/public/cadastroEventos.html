@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--Icones Awsome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/x-icon" href="img/siassVerde.png" />
+    <link rel="stylesheet" href="css/base.css">
+    <title>SiAss</title>
+</head>
+
+<body>
+    <header>
+        <!--Inicio do navbar-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <div class="imgNav alinLogo">
+                        <img src="img/siassVerde.png" class="img-responsive" alt="Logo da Siass">
+                    </div>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">
+                                <i class="fas fa-home"></i>Inicio
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-user"></i>
+                                Artesãos
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="artesaosCadastrados.html">
+                                    <i class="fas fa-list-ul"></i>
+                                    Artesãos Cadastrados
+                                </a>
+                                <a class="dropdown-item" href="cadastroArtesao.html">
+                                    <i class="fas fa-user-plus"></i>
+                                    Cadastro de Artesãos
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="relatoriosArtesao.html">
+                                    <i class="far fa-chart-bar"></i>
+                                    Relatório de Artesãos</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-boxes"></i>
+                                Produtos
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="cadastroProduto.html">
+                                    <i class="fas fa-box-open"></i>
+                                    Cadastrar Produto
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">
+                                    <i class="far fa-chart-bar"></i>
+                                    Relatório de Produtos</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-calendar-alt"></i>
+                                Eventos
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="cadastroEventos.html">
+                                    <i class="far fa-calendar-alt"></i>
+                                    Cadastrar novo Evento
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">
+                                    <i class="far fa-chart-bar"></i>
+                                    Relatório de Eventos</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-dollar-sign"></i>
+                                Movimentações
+
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="movimentacoes.html">
+                                    <i class="far fa-calendar-alt"></i>
+                                    Entrada e Saída
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">
+                                    <i class="far fa-chart-bar"></i>
+                                    Dashboard</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder=" Digite aqui para pesquisar..."
+                            aria-label="Search">
+
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                            <i class="fas fa-search colorbtn"></i> Pesquisar</button>
+                        <a href="login.html" class="sair">Sair</a>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--Inicio do container-->
+    <div class="container">
+        <div class="containerBody">
+            <h2>Eventos</h2>
+            <hr>
+            <h4>Dados do Evento</h4>
+            <form class="needs-validation" action="/event" method="POST">
+                <div class="form-row">
+                    <div class="col-md-8 mb-3">
+                        <label for="evento">Evento</label>
+                        <input type="text" class="form-control" id="evento" name="evento" placeholder="Nome do Evento"
+                            required>
+                        <div class="valid-tooltip">
+                            ótimo
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="dataEvento">Data</label>
+                        <input class="form-control" type="date" value="0000-00-00" id="dataEvento" name="dataEvento">
+                        <div class="valid-tooltip">
+                            Digite uma data valida
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="horaEvento">Hora</label>
+                        <input class="form-control" type="time" value="00:00:00" id="horaEvento" name="hora">
+                    </div>
+                </div>
+                <hr>
+                <h4>Endereço</h4>
+                <br>
+                <div class="form-row">
+                    <div class="col-md-3 mb-3">
+                        <label for="cep">CEP</label> 
+                        <input type="text " class="form-control" id="cep"
+                            name="cep" placeholder="00000-000" onblur="pesquisacep(this.value);" required>
+                        <div class="invalid-tooltip">Insira CEP válido.</div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="rua">Rua</label>
+                        <input type="text" class="form-control" id="rua" name="rua" placeholder="Rua" required>
+                        <div class="invalid-tooltip">
+                            Por favor, insira uma rua
+                        </div>
+                    </div>
+                    <div class="col-md-1 mb-3">
+                        <label for="numeroEnd">Nº</label>
+                        <input type="text" class="form-control " id="numeroEnd" name="numeroEnd" placeholder="Nº"
+                            required>
+                        <div class="invalid-tooltip">
+                            Por favor, insira um rua
+                        </div>
+                    </div>
+                    <div class="col-md-2 mb-3">
+                        <label for="complemento">Complemento</label>
+                        <input type="text" class="form-control " id="complemento" name="complemento" placeholder="Complemento"
+                            required>
+                        <div class="invalid-tooltip">
+                            Por favor, insira um número
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-3 mb-3">
+                        <label for="bairro">Bairro</label>
+                        <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Bairro" required>
+                        <div class="invalid-tooltip ">
+                            Insira um estado válido.
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="cidade">Cidade</label>
+                        <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Cidade" required>
+                        <div class="invalid-tooltip ">
+                            Insira um estado válido.
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="uf">Estado</label>
+                        <input type="text" class="form-control" id="uf" name="uf" placeholder="Estado" required>
+                        <div class="invalid-tooltip ">
+                            Insira um estado válido.
+                        </div>
+                    </div>
+
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-3 offset-md-10">
+                        <button class="btn btn-primary" type="submit">Cadastrar</button>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+    <script src="js/customJavaScript.js"></script>
+</body>
+
+</html>
