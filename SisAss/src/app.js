@@ -14,15 +14,16 @@ mongoose.connect("mongodb://siassmaster:siass4321@ds018508.mlab.com:18508/siassm
 //Carregar models aula 16
 const Product = require('./models/product');
 const Artesao = require('./models/artesao');
+const Event = require('./models/event');
 //carrega a pasta com as views, css e js
 app.use(express.static('../src/public/'));
 
-//carregar rotas que estão em index
+//carregar rotas
 const indexRoute = require('./routes/index-route');
-//carregar rotas de products
 const productRoute = require('./routes/products-route');
-//carregar rotas de artesãos
 const artesaoRoute = require('./routes/artesao-route');
+const eventRoute = require('./routes/event-route');
+
 app.use(bodyParser.json()); //converte todo conteudo do corpo(corpo da requisição) pra Json
 app.use(bodyParser.urlencoded({ extended: false })); //codifica URL
 
@@ -30,4 +31,6 @@ app.use(bodyParser.urlencoded({ extended: false })); //codifica URL
 app.use('/', indexRoute);
 app.use('/products', productRoute);
 app.use('/artesao', artesaoRoute);
+app.use('/event', eventRoute);
+
 module.exports = app;

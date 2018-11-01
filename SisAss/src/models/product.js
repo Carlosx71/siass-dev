@@ -56,6 +56,10 @@ const schema = new Schema({
         type: Boolean,
         required: true,
         default: true
+    },
+    dataCriacao: {
+        type: Date,
+        default: Date.now
     }
 });
 

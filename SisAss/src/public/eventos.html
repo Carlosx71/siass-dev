@@ -138,7 +138,8 @@
                 <div class="form-row">
                     <div class="col-md-8 mb-3">
                         <label for="evento">Evento</label>
-                        <input type="text" class="form-control" id="evento" placeholder="Nome do Evento" required>
+                        <input type="text" class="form-control" id="evento" name="evento" placeholder="Nome do Evento"
+                            required>
                         <div class="valid-tooltip">
                             ótimo
                         </div>
@@ -147,14 +148,14 @@
                 <div class="form-row">
                     <div class="col-md-4 mb-3">
                         <label for="dataEvento">Data</label>
-                        <input class="form-control" type="date" value="0000-00-00" id="dataEvento">
+                        <input class="form-control" type="date" value="0000-00-00" id="dataEvento" name="data">
                         <div class="valid-tooltip">
                             Digite uma data valida
                         </div>
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="horaEvento">Hora</label>
-                        <input class="form-control" type="time" value="00:00:00" id="horaEvento">
+                        <input class="form-control" type="time" value="00:00:00" id="horaEvento" name="hora">
                     </div>
                 </div>
                 <hr>
@@ -163,15 +164,15 @@
                 <div class="form-row">
                     <div class="col-md-3 mb-3">
                         <label for="cepArtesao">CEP</label>
-                        <input type="text " class="form-control" id="cepArtesao" placeholder="00000-000" onblur="pesquisacep(this.value);"
-                            required>
+                        <input type="text " class="form-control" id="cepEvento" name="cep" placeholder="00000-000"
+                            onblur="pesquisacep(this.value);" required>
                         <div class="invalid-tooltip">
                             Insira CEP válido.
                         </div>
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="rua">Rua</label>
-                        <input type="text" class="form-control" id="rua" placeholder="Rua" required>
+                        <input type="text" class="form-control" id="ruaEvento" name="rua" placeholder="Rua" required>
                         <div class="invalid-tooltip">
                             Por favor, insira uma rua
                         </div>
@@ -218,7 +219,11 @@
 
                 </div>
                 <hr>
-                <button class="btn btn-primary" type="submit">Cadastrar</button>
+                <div class="row">
+                    <div class="col-md-3 offset-md-10">
+                        <button class="btn btn-primary" type="submit">Cadastrar</button>
+                    </div>
+                </div>
         </div>
     </div>
 

@@ -4,7 +4,7 @@ const controller = require('../controllers/artesao-controller');
 
 router.post('/',controller.post);
 router.post('/:id',controller.update);
-router.get('/countMG',controller.countMG);
+router.get('/countEst',controller.countEst);
 router.get('/artAlfabetica',controller.artAlfabetica);
 router.get('/artAlfabeEst',controller.artAlfabeEst);
 //router.get('/pagination', controller.pagination);

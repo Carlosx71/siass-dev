@@ -51,7 +51,7 @@ exports.cadasSucess = (req, res, next) => {
     res.sendFile(200, path.resolve('../public/cadastroSucessoArtesao.html'));
 };
 
-exports.countMG = (req, res, next) => {
+exports.countEst = (req, res, next) => {
     Artesao.aggregate([
         { $group: { _id: { uf: '$uf' }, count: { $sum: 1 } } }], (err, count) => {
             res.status(200).json(count);
