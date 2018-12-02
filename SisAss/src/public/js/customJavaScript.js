@@ -2320,6 +2320,7 @@ function escreverProd(conteudo) {
 	document.getElementById('edDescription').value = (conteudo.description);
 	document.getElementById('edArtesao').value = (conteudo.artesao);
 	document.getElementById('edQuantidade').value = (conteudo.quantidade);
+	document.getElementById('imgProd').src = (conteudo.imgProd);
 };
 
 function escreverEvent(conteudo) {

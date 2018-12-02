@@ -24,7 +24,9 @@ const productRoute = require('./routes/products-route');
 const artesaoRoute = require('./routes/artesao-route');
 const eventRoute = require('./routes/event-route');
 
-app.use(bodyParser.json()); //converte todo conteudo do corpo(corpo da requisição) pra Json
+//app.use(bodyParser.json()); //converte todo conteudo do corpo(corpo da requisição) pra Json
+app.use(bodyParser.json({limit: "50mb"}));
+app.use(bodyParser.urlencoded({limit: "50mb", extended: true, parameterLimit:50000}));
 app.use(bodyParser.urlencoded({ extended: false })); //codifica URL
 
 //Traz as rotas

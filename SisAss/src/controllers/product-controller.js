@@ -23,7 +23,8 @@ exports.post = (req, res, next) => {
     product
         .save() //Usado para salvar no mongoodb
         .then(x => {
-            res.status(201).send({ message: 'Produto cadastrado com sucesso' });
+            //res.status(201).send({ message: 'Produto cadastrado com sucesso' });
+            res.redirect('http://localhost/cadastroSucessoProduto.html');
         }).catch(e => {
             res.status(400).send({ message: 'Falha ao cadastrar o produto', data: e });
         });

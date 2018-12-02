@@ -5,17 +5,6 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script> document.getElementById('frmAction').action = 'products/' + id;</script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-        crossorigin="anonymous"></script>
-    <!--  Carrega Scripts principais -->
-    <script src="js/customJavaScript.js"></script>
     <!--Icones Awsome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
         crossorigin="anonymous">
@@ -24,12 +13,13 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
-    <link rel="shortcut icon" type="image/x-icon" href="img/siassVerde.png" />
+
     <link rel="stylesheet" href="css/base.css">
+    <link rel="shortcut icon" type="image/x-icon" href="img/siassVerde.png" />
     <title>SiAss</title>
 </head>
 
-<body onload="createJsonProduct()">
+<body>
     <header>
         <!--Inicio do navbar-->
         <nav class="navbar navbar-expand-lg navbar-light bg-dark">
@@ -126,130 +116,42 @@
                             </div>
                         </li>
                     </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder=" Digite aqui para pesquisar..."
+                            aria-label="Search">
+
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                            <i class="fas fa-search colorbtn"></i> Pesquisar</button>
+                        <a href="login.html" class="sair">Sair</a>
+                    </form>
                 </div>
             </div>
         </nav>
     </header>
 
     <div class="container">
-        <div class="containerBody">
-            <h2>Editar Produto</h2>
-            <hr>
-
-            <form class="needs-validation" method="POST" id="frmAction">
-                <div class="form-row">
-                    <div class="col-md-4 mb-3">
-                        <label for="product">Nome do Produto</label>
-                        <input type="text" class="form-control" id="edProduct" name="product" placeholder="Nome do Produto"
-                            required>
-                        <div class="valid-tooltip">
-                            ótimo
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label for="materiaPrima">Matéria Prima</label>
-                        <input type="text" class="form-control" id="edMateriaPrima" name="materiaPrima" placeholder="Matéria Prima"
-                            required>
-                        <div class="valid-tooltip">
-                            ótimo
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label for="peso">Peso</label>
-                        <input type="text" class="form-control" id="edPeso" name="peso" placeholder="Peso">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="col-md-6 mb-3">
-                        <label for="dimensao">Dimensão</label>
-                        <input type="text" class="form-control" id="edDimensao" name="dimensao" placeholder="Dimensão"
-                            required>
-                        <div class="invalid-tooltip">
-                            Por favor, insira uma cidade
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <label for="segmento">Segmento</label>
-                        <input type="text" class="form-control" id="edSegmento" name="segmento" placeholder="Segmento"
-                            required>
-                        <div class="invalid-tooltip">
-                            Insira um estado válido.
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <label for="preco">Preço</label>
-                        <input type="text" class="form-control" id="edPreco" name="preco" placeholder="00,00" required>
-                        <div class="invalid-tooltip">
-                            Insira um valor valido.
-                        </div>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="col-md-8 mb-3">
-                        <div class="form-group">
-                            <label for="descricao">Descrição</label>
-                            <textarea class="form-control" id="edDescription" name="description" rows="3"></textarea>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="col-md-6 mb-3">
-                        <div class="custom-file">
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="imgUpload" lang="pt-BR">
-                                <label class="custom-file-label" for="customFileLang">Escolha a foto do produto</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--<input class="btn btn-primary" type="file" id="imgUpload">-->
+        <div class="containerSucess">
+            <div class="containerBody">
+                <img src="img/icone_ok1.png" alt="Cadastrado com Sucesso" class="imgSucess">
                 <br>
-                <img id="imgProd" style="width: 300px">
-                <textarea id="base64img" name="imgProd" style="display:none;"></textarea>
-                <script>
-                    $(function () {
-                        $('#imgUpload').change(function () {
-                            const file = $(this)[0].files[0]
-                            const fileReader = new FileReader()
-                            fileReader.onloadend = function () {
-                                //seta a img para carregar
-                                $('#imgProd').attr('src', fileReader.result)
-
-                                const imgProd = fileReader.result;
-                                $('#base64img').val(imgProd)
-                                console.log(imgProd);
-                            }
-                            fileReader.readAsDataURL(file)
-                        })
-                    });
-                </script>
-
-                <div class="form-row">
-                    <div class="col-md-6 mb-3">
-                        <label for="artesao">Artesão</label>
-                        <input type="text" class="form-control" id="edArtesao" name="artesao" placeholder="Vincule um Artesão">
-                        <div class="invalid-tooltip">
-                            Por favor, insira uma artesão.
-                        </div>
-                    </div>
-                    <div class="col-md-2 mb-3">
-                        <label for="quantidade">Quantidade</label>
-                        <input type="text" class="form-control" id="edQuantidade" name="quantidade" placeholder="quantidade"
-                            required>
-                        <div class="invalid-tooltip">
-                            Por favor, insira uma quantidade.
-                        </div>
-                    </div>
-
-                </div>
-                <div class="row">
-                    <div class="col-md-3 offset-md-10"><button class="btn btn-primary" type="submit"><i class="far fa-save colorFas"></i>
-                            Salvar</button>
+                <div class="atuaSucess">
+                    <b>Produto cadastrado com Sucesso</b>
+                    <div>
+                        <a href="cadastroProduto.html">Click aqui para cadastrar um novo produto</a>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

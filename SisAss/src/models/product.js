@@ -35,6 +35,10 @@ const schema = new Schema({
     dimensao: {
         type: String,
         required: true
+    },   
+    imgProd: {
+        type: String,
+        required: true
     },
     segmento: {
         type: String,

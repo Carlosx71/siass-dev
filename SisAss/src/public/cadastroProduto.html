@@ -5,7 +5,14 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
     <!--Icones Awsome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
         crossorigin="anonymous">
@@ -192,6 +199,39 @@
                 </div>
                 <div class="form-row">
                     <div class="col-md-6 mb-3">
+                        <div class="custom-file">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="imgUpload" lang="pt-BR">
+                                <label class="custom-file-label" for="customFileLang">Escolha a foto do produto</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<input class="btn btn-primary" type="file" id="imgUpload">-->
+                <br>
+                <img id="imgProd" style="width: 300px">
+                <textarea id="base64img" name="imgProd" style="display:none;"></textarea>
+                <script>
+                    $(function () {
+                        $('#imgUpload').change(function () {
+                            const file = $(this)[0].files[0]
+                            const fileReader = new FileReader()
+                            fileReader.onloadend = function () {
+                                //seta a img para carregar
+                                $('#imgProd').attr('src', fileReader.result)
+
+                                const imgProd = fileReader.result;
+                                $('#base64img').val(imgProd)
+                                console.log(imgProd);
+                            }
+                            fileReader.readAsDataURL(file)
+                        })
+                    });
+                </script>
+                <img id="teste" src="">
+
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
                         <label for="artesao">Artesão</label>
                         <input type="text" class="form-control" id="artesao" name="artesao" placeholder="Vincule um Artesão">
                         <div class="invalid-tooltip">
@@ -216,14 +256,6 @@
             </form>
         </div>
     </div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-        crossorigin="anonymous"></script>
 </body>
 
 </html>
