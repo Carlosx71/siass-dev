@@ -57,9 +57,11 @@
                                     Cadastro de Artesãos
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="relatoriosArtesao.html">
+                                <a class="dropdown-item">
+                                    Relatórios</a>
+                                <a class="dropdown-item" href="artesaosReportEstado.html">
                                     <i class="far fa-chart-bar"></i>
-                                    Relatório de Artesãos</a>
+                                    Artesãos por Estado</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
@@ -69,6 +71,10 @@
                                 Produtos
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="produtosCadastrados.html">
+                                    <i class="fas fa-list-ul"></i>
+                                    Produtos Cadastrados
+                                </a>
                                 <a class="dropdown-item" href="cadastroProduto.html">
                                     <i class="fas fa-box-open"></i>
                                     Cadastrar Produto
@@ -86,6 +92,10 @@
                                 Eventos
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="eventosCadastrados.html">
+                                    <i class="fas fa-list-ul"></i>
+                                    Eventos Cadastrados
+                                </a>
                                 <a class="dropdown-item" href="cadastroEventos.html">
                                     <i class="far fa-calendar-alt"></i>
                                     Cadastrar novo Evento
@@ -115,14 +125,6 @@
                             </div>
                         </li>
                     </ul>
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder=" Digite aqui para pesquisar..."
-                            aria-label="Search">
-
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-                            <i class="fas fa-search colorbtn"></i> Pesquisar</button>
-                        <a href="login.html" class="sair">Sair</a>
-                    </form>
                 </div>
             </div>
         </nav>
@@ -163,9 +165,9 @@
                 <br>
                 <div class="form-row">
                     <div class="col-md-3 mb-3">
-                        <label for="cep">CEP</label> 
-                        <input type="text " class="form-control" id="cep"
-                            name="cep" placeholder="00000-000" onblur="pesquisacep(this.value);" required>
+                        <label for="cep">CEP</label>
+                        <input type="text " class="form-control" id="cep" name="cep" placeholder="00000-000" onblur="pesquisacep(this.value);"
+                            required>
                         <div class="invalid-tooltip">Insira CEP válido.</div>
                     </div>
                     <div class="col-md-6 mb-3">

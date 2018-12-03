@@ -73,9 +73,11 @@
                                     Cadastro de Artesãos
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="relatoriosArtesao.html">
+                                <a class="dropdown-item">                      
+                                    Relatórios</a>
+                                <a class="dropdown-item" href="artesaosReportEstado.html">
                                     <i class="far fa-chart-bar"></i>
-                                    Relatório de Artesãos</a>
+                                    Artesãos por Estado</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
@@ -139,14 +141,6 @@
                             </div>
                         </li>
                     </ul>
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder=" Digite aqui para pesquisar..."
-                            aria-label="Search">
-
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-                            <i class="fas fa-search colorbtn"></i> Pesquisar</button>
-                        <a href="login.html" class="sair">Sair</a>
-                    </form>
                 </div>
             </div>
         </nav>
@@ -175,14 +169,13 @@
                             var return__;
                             try {
                                 http = new XMLHttpRequest();
-                                //console.log(http);
+
                                 //Inicializando uma requisição
                                 http.open("GET", url, false);
                                 http.onreadystatechange = function (e) {
                                     if (http.readyState === 4) {
                                         if (http.status === 200) {
                                             return__ = http.responseText;
-                                            //console.log(return__);
                                         } else {
                                             console.log('error: ' + http.statusText);
                                         }
@@ -201,133 +194,97 @@
                         let PB = 0; let PR = 0; let PE = 0; let PI = 0; let RJ = 0; let RN = 0; let RS = 0; let RO = 0; let RR = 0; let SC = 0; let SP; let SE; let TO;
 
 
-                        //var dados = {};
                         for (let i = 0; i < estadosCount.length; i++) {
 
-                            //var estado = estadosCount[i]._id.uf;
-                            //var count = estadosCount[i].count;
-                            //var obje = {'estado': estado, 'count': count};
-                            //dados.push(obje);
-
                             if (estadosCount[i]._id.uf == 'AC') {
                                 AC = estadosCount[i].count
-                                console.log(AC + ' AC testando');
                             }
                             if (estadosCount[i]._id.uf == 'AL') {
                                 AL = estadosCount[i].count;
-                                console.log(AL + ' AL testando')
                             }
                             if (estadosCount[i]._id.uf == 'AP') {
                                 AP = estadosCount[i].count;
-                                console.log(AP + ' AP testando')
                             }
                             if (estadosCount[i]._id.uf == 'AC') {
                                 AC = estadosCount[i].count
-                                console.log(AC + ' AC testando');
                             }
                             if (estadosCount[i]._id.uf == 'AL') {
                                 AL = estadosCount[i].count;
-                                console.log(AL + ' AL testando')
                             }
                             if (estadosCount[i]._id.uf == 'AP') {
                                 AP = estadosCount[i].count;
-                                console.log(AP + ' AP testando')
                             }
                             if (estadosCount[i]._id.uf == 'AM') {
                                 AM = estadosCount[i].count;
-                                console.log(AL + ' AM testando')
                             }
                             if (estadosCount[i]._id.uf == 'BA') {
                                 BA = estadosCount[i].count;
-                                console.log(BA + ' BA testando')
                             }
                             if (estadosCount[i]._id.uf == 'CE') {
                                 CE = estadosCount[i].count;
-                                console.log(CE + ' CE testando')
-                            }
+                             }
                             if (estadosCount[i]._id.uf == 'DF') {
                                 DF = estadosCount[i].count;
-                                console.log(DF + ' DF testando')
                             }
                             if (estadosCount[i]._id.uf == 'ES') {
                                 ES = estadosCount[i].count;
-                                console.log(ES + ' ES testando')
                             }
                             if (estadosCount[i]._id.uf == 'GO') {
                                 GO = estadosCount[i].count;
-                                console.log(GO + ' GO testando')
                             }
                             if (estadosCount[i]._id.uf == 'MA') {
                                 MA = estadosCount[i].count;
-                                console.log(MA + ' MA testando')
                             }
                             if (estadosCount[i]._id.uf == 'MT') {
                                 MT = estadosCount[i].count;
-                                console.log(MT + ' MT testando')
                             }
                             if (estadosCount[i]._id.uf == 'MS') {
                                 MS = estadosCount[i].count;
-                                console.log(MS + ' MS testando')
                             }
                             if (estadosCount[i]._id.uf == 'MG') {
                                 MG = estadosCount[i].count;
-                                console.log(MG + ' MG testando')
                             }
                             if (estadosCount[i]._id.uf == 'PA') {
                                 PA = estadosCount[i].count;
-                                console.log(PA + ' PA testando')
                             }
                             if (estadosCount[i]._id.uf == 'PB') {
                                 PB = estadosCount[i].count;
-                                console.log(PB + ' PB testando')
                             }
                             if (estadosCount[i]._id.uf == 'PR') {
                                 PR = estadosCount[i].count;
-                                console.log(AL + ' PR testando')
                             }
                             if (estadosCount[i]._id.uf == 'PE') {
                                 PE = estadosCount[i].count;
-                                console.log(PE + ' PE testando')
                             }
                             if (estadosCount[i]._id.uf == 'PI') {
                                 PI = estadosCount[i].count;
-                                console.log(PI + ' PI testando')
                             }
                             if (estadosCount[i]._id.uf == 'RJ') {
                                 RJ = estadosCount[i].count;
-                                console.log(RJ + ' RJ testando')
                             }
                             if (estadosCount[i]._id.uf == 'RN') {
                                 RN = estadosCount[i].count;
-                                console.log(RN + ' RN testando')
                             }
                             if (estadosCount[i]._id.uf == 'RS') {
                                 RS = estadosCount[i].count;
-                                console.log(RS + ' RS testando')
                             }
                             if (estadosCount[i]._id.uf == 'RO') {
                                 RO = estadosCount[i].count;
-                                console.log(RO + ' RO testando')
                             }
                             if (estadosCount[i]._id.uf == 'RR') {
                                 RR = estadosCount[i].count;
-                                console.log(RR + ' RR testando')
                             }
                             if (estadosCount[i]._id.uf == 'SC') {
                                 SC = estadosCount[i].count;
-                                console.log(SC + ' SC testando')
                             }
                             if (estadosCount[i]._id.uf == 'SP') {
                                 SP = estadosCount[i].count;
-                                console.log(SP + ' SP testando')
                             }
                             if (estadosCount[i]._id.uf == 'SE') {
                                 SE = estadosCount[i].count;
-                                console.log(SE + ' SE testando')
                             }
                             if (estadosCount[i]._id.uf == 'TO') {
                                 TO = estadosCount[i].count;
-                                console.log(TO + ' TO testando')
                             }
                         }
 
@@ -337,10 +294,7 @@
 
                         //Graficio Artesão
                         var ctx = document.getElementById("artesaoGBarUF");
-                        //var obj = [count1.count, 5,12,5,9,8,2,3,9,11,4,12,19,20,4,22,21,20,14,5,12,15,16,11,14,15,21];
 
-                        //obj.push(15, 20);
-                        //alert(obj);
                         var myChart = new Chart(ctx, {
                             type: 'bar',
                             data: {

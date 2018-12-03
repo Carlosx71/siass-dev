@@ -63,9 +63,11 @@
 									Cadastro de Artesãos
 								</a>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="relatoriosArtesao.html">
+								<a class="dropdown-item">
+									Relatórios</a>
+								<a class="dropdown-item" href="artesaosReportEstado.html">
 									<i class="far fa-chart-bar"></i>
-									Relatório de Artesãos</a>
+									Artesãos por Estado</a>
 							</div>
 						</li>
 						<li class="nav-item dropdown">
@@ -75,6 +77,10 @@
 								Produtos
 							</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="produtosCadastrados.html">
+									<i class="fas fa-list-ul"></i>
+									Produtos Cadastrados
+								</a>
 								<a class="dropdown-item" href="cadastroProduto.html">
 									<i class="fas fa-box-open"></i>
 									Cadastrar Produto
@@ -92,7 +98,11 @@
 								Eventos
 							</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="eventos.html">
+								<a class="dropdown-item" href="eventosCadastrados.html">
+									<i class="fas fa-list-ul"></i>
+									Eventos Cadastrados
+								</a>
+								<a class="dropdown-item" href="cadastroEventos.html">
 									<i class="far fa-calendar-alt"></i>
 									Cadastrar novo Evento
 								</a>
@@ -121,13 +131,6 @@
 							</div>
 						</li>
 					</ul>
-					<form class="form-inline my-2 my-lg-0">
-						<input class="form-control mr-sm-2" type="search" placeholder=" Digite aqui para pesquisar..." aria-label="Search">
-
-						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-							<i class="fas fa-search colorbtn"></i> Pesquisar</button>
-						<a href="login.html" class="sair">Sair</a>
-					</form>
 				</div>
 			</div>
 		</nav>
@@ -146,12 +149,12 @@
 				<div class="form-row">
 					<div class="col-md-4 mb-3">
 						<label for="nome">Nome do Artesão</label> <input type="text" class="form-control" id="nome" name="nome"
-						 placeholder="Nome do Artesao" required/>
+						 placeholder="Nome do Artesao" required />
 						<div class="valid-tooltip">Campo Obrigatório</div>
 					</div>
 					<div class="col-md-4 mb-3">
 						<label for="dataDeNascimento">Data de Nascimento</label> <input class="form-control" type="date" value="00-00-0000"
-						 id="dataDeNascimento" name="dataDeNascimento"/>
+						 id="dataDeNascimento" name="dataDeNascimento" />
 						<div class="valid-tooltip">Digite uma data valida</div>
 					</div>
 					<div class="col-md-4 mb-3">
@@ -163,8 +166,8 @@
 								Masculino </label>
 						</div>
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="sexo" id="sexoFeminino" name="sexo" value="Feminino"/> <label
-							 class="form-check-label" for="sexoFeminino"> Feminino </label>
+							<input class="form-check-input" type="radio" name="sexo" id="sexoFeminino" name="sexo" value="Feminino" />
+							<label class="form-check-label" for="sexoFeminino"> Feminino </label>
 						</div>
 					</div>
 
