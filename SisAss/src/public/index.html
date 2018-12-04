@@ -73,7 +73,7 @@
                                     Cadastro de Artesãos
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item">                      
+                                <a class="dropdown-item">
                                     Relatórios</a>
                                 <a class="dropdown-item" href="artesaosReportEstado.html">
                                     <i class="far fa-chart-bar"></i>
@@ -120,14 +120,21 @@
     <!--Inicio do container-->
     <div class="container">
         <div class="containerBody">
-            <h2>Bem-vindo ao SiAss</h2>
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <div>
+                        <img src="img/siass.png" alt="logo siass" style="width: 75px"><h2>Bem-vindo ao SiAss</h2>
+                        
+                    </div>
+                </div>
+            </div>
             <hr>
 
             <div class="form-row">
                 <div class="col-md-2 mb-3 border rounded">
                     <div>
                         <h5>Inicialização Rápida</h5>
-                        <div><a href="cadastroArtesao.html"><i class="fas fa-user-plus"></i>Cadas. Produtos</a></div>                                  
+                        <div><a href="cadastroArtesao.html"><i class="fas fa-user-plus"></i>Cadas. Produtos</a></div>
                         <div><a href="cadastroProduto.html"><i class="fas fa-box-open"></i>Cadastrar Artesãos</a></div>
                         <div><a href="eventosCadastrados.html"><i class="fas fa-list-ul"></i>Cadastrar Eventos</a></div>
                     </div>
@@ -194,7 +201,7 @@
                             }
                             if (estadosCount[i]._id.uf == 'CE') {
                                 CE = estadosCount[i].count;
-                             }
+                            }
                             if (estadosCount[i]._id.uf == 'DF') {
                                 DF = estadosCount[i].count;
                             }

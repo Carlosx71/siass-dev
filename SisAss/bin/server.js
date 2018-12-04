@@ -17,7 +17,7 @@ const server = http.createServer(app);
 server.listen(port); 
 server.on('error', onError);
 server.on('listening', onListening);
-console.log('Ta funcionando carai!!!!! '+ port);
+console.log('localhost:'+ port);
 
 //verifica a porta disponível | aula 04
 function normalizePort(val) {
