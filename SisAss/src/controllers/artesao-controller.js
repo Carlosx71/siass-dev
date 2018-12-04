@@ -109,7 +109,8 @@ exports.update = (req, res, next) => {
                 uf: req.body.uf,
                 emailArtesao: req.body.emailArtesao,
                 celular: req.body.celular,
-                telefone: req.body.telefone
+                telefone: req.body.telefone,
+                imgArtesao: req.body.imgArtesao
             }
         }).then(x => {
             res.redirect('http://localhost/editSucessoArtesao.html');
