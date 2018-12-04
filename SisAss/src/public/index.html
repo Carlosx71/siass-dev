@@ -95,11 +95,6 @@
                                     <i class="fas fa-box-open"></i>
                                     Cadastrar Produto
                                 </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">
-                                    <i class="far fa-chart-bar"></i>
-                                    Relatório de Produtos</a>
-                            </div>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -116,29 +111,6 @@
                                     <i class="far fa-calendar-alt"></i>
                                     Cadastrar novo Evento
                                 </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">
-                                    <i class="far fa-chart-bar"></i>
-                                    Relatório de Eventos</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-dollar-sign"></i>
-                                Movimentações
-
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="movimentacoes.html">
-                                    <i class="far fa-calendar-alt"></i>
-                                    Entrada e Saída
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">
-                                    <i class="far fa-chart-bar"></i>
-                                    Dashboard</a>
-                            </div>
                         </li>
                     </ul>
                 </div>
@@ -152,15 +124,16 @@
             <hr>
 
             <div class="form-row">
-                <div class="col-md-2 mb-3 border">
+                <div class="col-md-2 mb-3 border rounded">
                     <div>
-                        <a href="cadastroArtesao.html"><i class="fas fa-user-plus"></i>Artesãos Cadastrados</a>
+                        <h5>Inicialização Rápida</h5>
+                        <div><a href="cadastroArtesao.html"><i class="fas fa-user-plus"></i>Cadas. Produtos</a></div>                                  
+                        <div><a href="cadastroProduto.html"><i class="fas fa-box-open"></i>Cadastrar Artesãos</a></div>
+                        <div><a href="eventosCadastrados.html"><i class="fas fa-list-ul"></i>Cadastrar Eventos</a></div>
                     </div>
-                    Teste<br>
-                    teste2
                 </div>
 
-                <div class="col-md-5 mb-3">
+                <div class="col-md-7 mb-3 offset-md-1">
                     <canvas id="artesaoGBarUF" width="200" height="200"></canvas>
                     <script>
                         let url = 'http://localhost/artesao/countEst';
@@ -169,7 +142,6 @@
                             var return__;
                             try {
                                 http = new XMLHttpRequest();
-
                                 //Inicializando uma requisição
                                 http.open("GET", url, false);
                                 http.onreadystatechange = function (e) {
@@ -376,30 +348,6 @@
                                 }
                             }
 
-                        });
-                    </script>
-                </div>
-                <div class="col-md-5 mb-3">
-                    <canvas id="myChart" width="200" height="200"></canvas>
-                    <script>
-                        var ctx = document.getElementById('myChart').getContext('2d');
-                        var chart = new Chart(ctx, {
-                            // The type of chart we want to create
-                            type: 'line',
-
-                            // The data for our dataset
-                            data: {
-                                labels: ["January", "February", "March", "April", "May", "June", "July"],
-                                datasets: [{
-                                    label: "My First dataset",
-                                    backgroundColor: 'rgb(255, 99, 132)',
-                                    borderColor: 'rgb(255, 99, 132)',
-                                    data: [0, 10, 5, 2, 20, 30, 45],
-                                }]
-                            },
-
-                            // Configuration options go here
-                            options: {}
                         });
                     </script>
                 </div>

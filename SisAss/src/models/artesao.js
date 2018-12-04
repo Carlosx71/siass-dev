@@ -28,6 +28,10 @@ const schema = new Schema({
     numRG: {
         type: Number,
         required: true
+    },   
+    imgArtesao: {
+        type: String,
+        required: true
     },
     cepArtesao: {
         type: Number,

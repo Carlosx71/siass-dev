@@ -145,7 +145,39 @@
 			<br>
 			<!--action="/artesao" method="POST"-->
 			<form class="needs-validation" method="POST" id="frmAction">
-				<!--<input type="hidden" name="_METHOD" value="PUT"/>-->
+
+					<div class="form-row">
+							<div class="col-md-6 mb-3">
+								<div class="custom-file">
+									<div class="custom-file">
+										<input type="file" class="custom-file-input" id="imgUploadArt"  lang="pt-BR">
+										<label class="custom-file-label" for="customFileLang">Escolha a foto do Artesão</label>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<br>
+						<img id="imgArt" style="width: 300px">
+						<textarea name="imgArtesao" id="base64imgArt"  style="display:none;""></textarea>
+			
+						<script>
+							$(function () {
+								$('#imgUploadArt').change(function () {
+									const file = $(this)[0].files[0]
+									const fileReader = new FileReader()
+									fileReader.onloadend = function () {
+										//seta a img para carregar
+										$('#imgArt').attr('src', fileReader.result)
+										const imgArt = fileReader.result;
+										$('#base64imgArt').val(imgArt)
+										console.log(imgArt);
+									}
+									fileReader.readAsDataURL(file)
+								})
+							});
+						</script>
+						
 				<div class="form-row">
 					<div class="col-md-4 mb-3">
 						<label for="nome">Nome do Artesão</label> <input type="text" class="form-control" id="nome" name="nome"

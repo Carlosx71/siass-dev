@@ -31,7 +31,7 @@ const schema = new Schema({
     },
     complemento: {
         type: String,
-        required: true
+        required: false
     },
     bairro: {
         type: String,

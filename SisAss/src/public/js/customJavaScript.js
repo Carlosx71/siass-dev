@@ -2307,6 +2307,7 @@ function escreverArt(conteudo) {
 	document.getElementById('emailArtesao').value = (conteudo.emailArtesao);
 	document.getElementById('celular').value = (conteudo.celular);
 	document.getElementById('telefone').value = (conteudo.telefone);
+	document.getElementById('imgArt').src = (conteudo.imgArtesao);
 }
 
 function escreverProd(conteudo) {

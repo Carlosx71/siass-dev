@@ -8,7 +8,14 @@
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	 crossorigin="anonymous "></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	 crossorigin="anonymous "></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+	 crossorigin="anonymous "></script>
 	<!--Icones Awsome-->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
 	 crossorigin="anonymous">
@@ -138,9 +145,42 @@
 		<div class="containerBody">
 			<h2>Cadastro de Artesão</h2>
 			<hr>
-			<h4>Dados Pessoas</h4>
-			<br>
+			<h4>Dados Pessoais</h4>
+			<br>			
 			<form class="needs-validation" action="/artesao" method="POST">
+
+				<div class="form-row">
+						<div class="col-md-6 mb-3">
+							<div class="custom-file">
+								<div class="custom-file">
+									<input type="file" class="custom-file-input" id="imgUploadArt"  lang="pt-BR" required>
+									<label class="custom-file-label" for="customFileLang">Escolha a foto do Artesão</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<br>
+					<img id="imgArt" style="width: 300px">
+					<textarea name="imgArtesao" id="base64imgArt"  style="display:none;""></textarea>
+		
+					<script>
+						$(function () {
+							$('#imgUploadArt').change(function () {
+								const file = $(this)[0].files[0]
+								const fileReader = new FileReader()
+								fileReader.onloadend = function () {
+									//seta a img para carregar
+									$('#imgArt').attr('src', fileReader.result)
+									const imgArt = fileReader.result;
+									$('#base64imgArt').val(imgArt)
+									console.log(imgArt);
+								}
+								fileReader.readAsDataURL(file)
+							})
+						});
+					</script>
+
 				<div class="form-row">
 					<div class="col-md-4 mb-3">
 						<label for="nome">Nome do Artesão</label> <input type="text" class="form-control" id="nome" name="nome"
@@ -253,21 +293,17 @@
 					</div>
 				</div>
 				<hr>
-				<button class="btn btn-primary" type="submit">Cadastrar</button>
+				<div class="row">
+					<div class="col-md-3 offset-md-10"><button class="btn btn-primary" type="submit"><i class="far fa-save colorFas"></i>
+							Salvar</button>
+					</div>
+				</div>
 			</form>
 		</div>
 
 
 	</div>
 	<br>
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-	 crossorigin="anonymous "></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-	 crossorigin="anonymous "></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-	 crossorigin="anonymous "></script>
 </body>
 
 </html>

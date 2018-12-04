@@ -17,7 +17,7 @@ exports.post = (req, res, next) => {
     event
         .save() //Usado para salvar no mongoodb
         .then(x => {
-            res.redirect('http://localhost/cadastroSucessoArtesao.html');
+            res.redirect('http://localhost/cadastroSucessoEvento.html');
         }).catch(e => {
             res.status(400).send({ message: 'Falha ao cadastrar o evento', data: e });
         });

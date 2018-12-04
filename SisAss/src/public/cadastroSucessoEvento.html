@@ -13,8 +13,9 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
-    <link rel="shortcut icon" type="image/x-icon" href="img/siassVerde.png" />
+
     <link rel="stylesheet" href="css/base.css">
+    <link rel="shortcut icon" type="image/x-icon" href="img/siassVerde.png" />
     <title>SiAss</title>
 </head>
 
@@ -130,100 +131,18 @@
         </nav>
     </header>
 
-    <!--Inicio do container-->
     <div class="container">
-        <div class="containerBody">
-            <h2>Eventos</h2>
-            <hr>
-            <h4>Dados do Evento</h4>
-            <form class="needs-validation" action="/event" method="POST">
-                <div class="form-row">
-                    <div class="col-md-8 mb-3">
-                        <label for="evento">Evento</label>
-                        <input type="text" class="form-control" id="evento" name="evento" placeholder="Nome do Evento"
-                            required>
-                        <div class="valid-tooltip">
-                            ótimo
-                        </div>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="col-md-4 mb-3">
-                        <label for="dataEvento">Data</label>
-                        <input class="form-control" type="date" value="0000-00-00" id="dataEvento" name="dataEvento">
-                        <div class="valid-tooltip">
-                            Digite uma data valida
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label for="horaEvento">Hora</label>
-                        <input class="form-control" type="time" value="00:00:00" id="horaEvento" name="hora">
-                    </div>
-                </div>
-                <hr>
-                <h4>Endereço</h4>
+        <div class="containerSucess">
+            <div class="containerBody">
+                <img src="img/icone_ok1.png" alt="Cadastrado com Sucesso" class="imgSucess">
                 <br>
-                <div class="form-row">
-                    <div class="col-md-3 mb-3">
-                        <label for="cep">CEP</label>
-                        <input type="text " class="form-control" id="cep" name="cep" placeholder="00000-000" onblur="pesquisacep(this.value);"
-                            required>
-                        <div class="invalid-tooltip">Insira CEP válido.</div>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="rua">Rua</label>
-                        <input type="text" class="form-control" id="rua" name="rua" placeholder="Rua" required>
-                        <div class="invalid-tooltip">
-                            Por favor, insira uma rua
-                        </div>
-                    </div>
-                    <div class="col-md-1 mb-3">
-                        <label for="numeroEnd">Nº</label>
-                        <input type="text" class="form-control " id="numeroEnd" name="numeroEnd" placeholder="Nº"
-                            required>
-                        <div class="invalid-tooltip">
-                            Por favor, insira um rua
-                        </div>
-                    </div>
-                    <div class="col-md-2 mb-3">
-                        <label for="complemento">Complemento</label>
-                        <input type="text" class="form-control " id="complemento" name="complemento" placeholder="Complemento"
-                            >
-                        <div class="invalid-tooltip">
-                            Por favor, insira um número
-                        </div>
+                <div class="atuaSucess">
+                    <b>Evento cadastrado com Sucesso</b>
+                    <div>
+                        <a href="cadastroEventos.html">Click aqui para cadastrar um novo evento</a>
                     </div>
                 </div>
-                <div class="form-row">
-                    <div class="col-md-3 mb-3">
-                        <label for="bairro">Bairro</label>
-                        <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Bairro" required>
-                        <div class="invalid-tooltip ">
-                            Insira um estado válido.
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="cidade">Cidade</label>
-                        <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Cidade" required>
-                        <div class="invalid-tooltip ">
-                            Insira um estado válido.
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <label for="uf">Estado</label>
-                        <input type="text" class="form-control" id="uf" name="uf" placeholder="Estado" required>
-                        <div class="invalid-tooltip ">
-                            Insira um estado válido.
-                        </div>
-                    </div>
-
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col-md-3 offset-md-10">
-                        <button class="btn btn-primary" type="submit">Cadastrar</button>
-                    </div>
-                </div>
+            </div>
         </div>
     </div>
 
@@ -235,7 +154,6 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
         crossorigin="anonymous"></script>
-    <script src="js/customJavaScript.js"></script>
 </body>
 
 </html>

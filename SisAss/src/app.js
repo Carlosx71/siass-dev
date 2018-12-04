@@ -6,8 +6,6 @@ const bodyParser = require('body-Parser'); //Este pacote converte o corpo da req
 const mongoose = require('mongoose'); //Instalei um pacote via npm na aula 14
 const app = express();
 const router = express.Router();
-//Conecta ao banco aula 14
-//mongoose.connect('mongodb://siassmaster:siass4321@ds018508.mlab.com:18508/siassmaster');
 //Conecta ao banco aula 14 o conjunto { useNewUrlParser: true } coloquei, pois sem isso a conexão não valida depois de um tempo
 mongoose.connect("mongodb://siassmaster:siass4321@ds018508.mlab.com:18508/siassmaster", { useNewUrlParser: true });
 
