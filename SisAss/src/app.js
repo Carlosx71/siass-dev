@@ -2,7 +2,7 @@
 // Da uma olhada no fs = require('fs'); isso permite apontar para as paginas html
 //Importando pacotes (Elas vem da pasta node_modules)
 const express = require('express');
-const bodyParser = require('body-Parser'); //Este pacote converte o corpo da requisição para json
+const bodyParser = require('body-parser'); //Este pacote converte o corpo da requisição para json
 const mongoose = require('mongoose'); //Instalei um pacote via npm na aula 14
 const app = express();
 const router = express.Router();
